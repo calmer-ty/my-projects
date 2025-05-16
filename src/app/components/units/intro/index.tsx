@@ -1,11 +1,9 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import FadeInSection from "../../commons/fadeInSection";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import TitleItem from "./titleItem";
+
+import * as S from "./styles";
 
 // Slider
 const projects = [
@@ -15,10 +13,11 @@ const projects = [
   { id: 4, title: "프로젝트 4", description: "네 번째 프로젝트 설명입니다." },
 ];
 const settings = {
-  dots: true,
-  infinite: true,
+  // dots: true,
+  arrows: true,
+  infinite: false,
   speed: 500,
-  slidesToShow: 1,
+  slidesToShow: 3,
   slidesToScroll: 1,
 };
 
@@ -43,47 +42,52 @@ export default function Intro() {
   // const opacityFrontend = useTransform(scrollYProgress, [0, 1], [1, 0]);
   // const scaleFrontend = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
+  // fadeInUp
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2, // 아이템마다 딜레이
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <>
-      <FadeInSection
-        id="home"
-        className="bg-gradient-to-b from-black via-black to-white overflow-hidden"
-      >
-        <section className="w-screen mx-20" ref={targetRef}>
-          {/* <motion.h2
-            style={{ x: xLeft, scale: scaleLeft }}
-            className="w-[max-content] text-[14rem] font-bold"
-          >
-            Hello
-          </motion.h2> */}
+      <FadeInSection id="home" className="bg-gradient-to-b from-black via-black to-white overflow-hidden">
+        <div className="w-screen mx-20" ref={targetRef}>
           <TitleItem x={xLeft} scale={scaleLeft} text="Hello" />
           <TitleItem x={xRight} scale={scaleRight} text="TaeYeon" />
-
-          {/* <motion.h2
-            style={{ x: xRight, scale: scaleRight, float: "right" }}
-            className="w-[max-content] text-[14rem] font-bold"
-          >
-            TaeYeon
-          </motion.h2> */}
-
-          {/* <motion.h2
-            style={{ opacity: opacityFrontend, scale: scaleFrontend }}
-            className="relative top-2/3 left-1/2 -translate-x-1/2 text-[14rem] font-bold"
-          >
-            Frontend
-          </motion.h2> */}
-        </section>
+        </div>
       </FadeInSection>
 
-      <FadeInSection id="projects">
-        <Slider {...settings} className="w-96 mx-auto">
-          {projects.map((project) => (
-            <div key={project.id} className="p-6 bg-white rounded shadow">
-              <h3 className="text-xl font-bold">{project.title}</h3>
-              <p className="mt-2">{project.description}</p>
-            </div>
-          ))}
-        </Slider>
+      <FadeInSection id="projects" className="justify-end">
+        <div>
+          <S.Slide {...settings} className="w-300 h-100 mx-auto">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                className="h-100 p-6 bg-white rounded-3xl shadow"
+                variants={fadeInUp}
+                initial="hidden"
+                animate="visible"
+                custom={index}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.15)",
+                  transition: { type: "spring", stiffness: 300 },
+                }}
+              >
+                <h3 className="text-xl font-bold">{project.title}</h3>
+                <p className="mt-2">{project.description}</p>
+              </motion.div>
+            ))}
+          </S.Slide>
+        </div>
       </FadeInSection>
     </>
   );
