@@ -1,11 +1,11 @@
 "use client";
 
-import Intro from "./components/units/intro";
+import Main from "./components/units/main";
 
 export default function Home() {
   return (
     <main>
-      <Intro />
+      <Main />
     </main>
   );
 }

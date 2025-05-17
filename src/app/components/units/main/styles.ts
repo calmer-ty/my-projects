@@ -12,8 +12,12 @@ export const Slide = styled(Slider)`
     position: absolute;
     top: initial;
     bottom: -1rem;
+
+    &.slick-disabled {
+      pointer-events: none;
+    }
     &::before {
-      color: red;
+      color: gray;
       font-size: 2.25rem;
     }
   }

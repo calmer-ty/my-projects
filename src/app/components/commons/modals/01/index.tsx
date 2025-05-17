@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-import { IProject } from "@/src/app/components/units/intro/types";
+import { IProject } from "@/src/app/components/units/main/types";
 
 export default function Modal01({
   isOpen,

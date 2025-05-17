@@ -1,4 +1,4 @@
-import { IProject } from "@/src/app/components/units/intro/types";
+import { IProject } from "@/src/app/components/units/main/types";
 import { motion } from "framer-motion";
 
 export default function PopupButton01({

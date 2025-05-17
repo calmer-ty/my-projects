@@ -44,7 +44,7 @@ const settings = {
   ],
 };
 
-export default function Slider() {
+export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<IProject | null>(null);
   // fadeInUp
   const fadeInUp = {
