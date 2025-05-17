@@ -1,14 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { IModalProps } from "@/src/app/commons/types";
 
-import { IProject } from "@/src/app/components/units/main/types";
-
-export default function Modal01({
+export default function Modal01<T>({
   isOpen,
   setIsOpen,
-}: {
-  isOpen: IProject | null;
-  setIsOpen: React.Dispatch<React.SetStateAction<IProject | null>>;
-}) {
+  children,
+}: IModalProps<T>) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -28,8 +25,7 @@ export default function Modal01({
             exit={{ scale: 0.9, opacity: 0 }}
             onClick={(e) => e.stopPropagation()} // 모달 내부 클릭은 닫히지 않음
           >
-            <h2 className="text-xl font-bold">{isOpen.title}</h2>
-            <p className="mt-2">{isOpen.desc}</p>
+            {children}
             <button
               className="mt-4 px-4 py-2 bg-black text-white rounded"
               onClick={() => setIsOpen(null)}
