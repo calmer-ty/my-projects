@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
 
-import Modal01 from "../../commons/modals/01";
+// import Modal01 from "../../commons/modals/01";
+import PopupButton01 from "../../commons/buttons/popup/01";
 
 import * as S from "./styles";
 import { IProject } from "./types";
-import PopupButton01 from "../../commons/buttons/popup/01";
-import { Plus } from "lucide-react";
 
 const projects = [
   {
@@ -44,7 +44,7 @@ const settings = {
   ],
 };
 
-export default function Projects() {
+export default function CardB() {
   const [selectedProject, setSelectedProject] = useState<IProject | null>(null);
   // fadeInUp
   const fadeInUp = {
@@ -80,7 +80,6 @@ export default function Projects() {
             <p className="mt-2 text-lg font-bold">{project.desc}</p>
 
             <PopupButton01
-              target={project}
               setIsOpen={setSelectedProject}
               className=" bg-black absolute right-4 bottom-4"
             >
@@ -90,7 +89,7 @@ export default function Projects() {
         ))}
       </S.Slide>
 
-      <Modal01 isOpen={selectedProject} setIsOpen={setSelectedProject} />
+      {/* <Modal01 isOpen={selectedProject} setIsOpen={setSelectedProject} /> */}
     </>
   );
 }
