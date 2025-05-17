@@ -6,20 +6,22 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const Slide = styled(Slider)`
   .slick-slide {
-    padding: 0 1rem 2rem;
+    padding: 1rem 1rem 2rem;
   }
   .slick-arrow {
     position: absolute;
-    top: 430px;
+    top: initial;
+    bottom: -1rem;
     &::before {
       color: red;
       font-size: 2.25rem;
     }
   }
   .slick-prev {
-    left: 1075px;
+    left: initial;
+    right: 5rem;
   }
   .slick-next {
-    right: 30px;
+    right: 2rem;
   }
 `;
