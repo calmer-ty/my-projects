@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function PopupButton01<T>({
+export default function PopupButtonA<T>({
   setIsOpen,
   className,
   children,
@@ -11,7 +11,7 @@ export default function PopupButton01<T>({
 }) {
   return (
     <motion.button
-      className={`px-2 py-2 rounded-full text-white shadow cursor-pointer ${className}`}
+      className={`px-2 py-2 cursor-pointer ${className}`}
       onClick={() => setIsOpen(null)}
       whileHover={{ scale: 1.05 }}
       // whileTap={{ scale: 0.95, rotate: -1 }}

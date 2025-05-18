@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { IModalProps } from "@/src/app/commons/types";
 
-export default function Modal02<T>({
+export default function ModalB<T>({
   isOpen,
   setIsOpen,
   children,

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 
-import Modal02 from "@/src/app/components/commons/modals/02";
-import PopupButton01 from "@/src/app/components/commons/buttons/popup/01";
+import ModalB from "@/src/app/components/commons/modals/B";
+import PopupButtonA from "@/src/app/components/commons/buttons/popup/A";
 import { items, popups } from "./data";
 
 export default function CardA() {
@@ -74,7 +74,8 @@ export default function CardA() {
         ))}
       </motion.div>
 
-      <Modal02
+      {/* 모달 */}
+      <ModalB
         isOpen={selectedId}
         setIsOpen={setSelectedId}
         contStyle="w-4/5 h-4/5 pt-11"
@@ -110,13 +111,13 @@ export default function CardA() {
             </div>
           </div>
         )}
-        <PopupButton01
+        <PopupButtonA
           setIsOpen={setSelectedId}
-          className="absolute top-3 right-3 bg-red-600"
+          className="absolute top-3 right-3"
         >
-          <X size={14} strokeWidth={4} />
-        </PopupButton01>
-      </Modal02>
+          <X className="" size={20} strokeWidth={3} color="black" />
+        </PopupButtonA>
+      </ModalB>
     </>
   );
 }
