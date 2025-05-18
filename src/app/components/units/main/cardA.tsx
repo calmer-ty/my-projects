@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { X } from "lucide-react";
 
 import ModalB from "@/src/app/components/commons/modals/B";
 import PopupButtonA from "@/src/app/components/commons/buttons/popup/A";
-import { items, popups } from "./data";
+
+import { X } from "lucide-react";
+import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
+import { skillIcons } from "@/src/app/commons/types/constants/skillIcons";
+
+import { items, projectData } from "./data";
 
 export default function CardA() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const selectedPopup = popups.find((item) => item.id === selectedId);
+  const selectedProject = projectData.find((item) => item.id === selectedId);
+
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
     <>
@@ -78,36 +84,114 @@ export default function CardA() {
       <ModalB
         isOpen={selectedId}
         setIsOpen={setSelectedId}
-        contStyle="w-4/5 h-4/5 pt-11"
+        contentsStyle="w-4/5 h-4/5 pt-12"
       >
-        {selectedPopup && (
+        {selectedProject && (
           <div className="flex flex-col gap-6 h-full lg:flex-row">
             {/* 이미지 */}
             <img
-              className="h-1/2 flex-1 object-cover rounded-xl lg:h-full"
-              src={`/images/${selectedPopup.bgSrc}`}
-              alt={selectedPopup.title}
+              className="w-full h-4/10 object-cover rounded-xl lg:w-4/10 lg:h-full"
+              src={`/images/${selectedProject.bgSrc}`}
+              alt={selectedProject.title}
             />
 
             {/* 콘텐츠 */}
-            <div className="overflow-y-scroll flex-2">
-              <h3 className="text-2xl font-bold mb-2">{selectedPopup.title}</h3>
-              <h4 className="text-lg font-semibold text-gray-500 mb-4">
-                {selectedPopup.desc}
-              </h4>
-              <p className="mb-2">{selectedPopup.date}</p>
-              <p className="mb-4">{selectedPopup.team}</p>
+            <div className="flex flex-col gap-6 overflow-y-scroll break-keep">
+              {/* 상단 서비스 소개 */}
+              <div className="flex flex-col gap-4">
+                <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
+                <p className="text-mb font-semibold text-gray-500 ">
+                  {selectedProject.desc}
+                </p>
+                <div className="flex gap-4">
+                  <p className="flex items-center gap-2">
+                    <FaRegCalendarAlt /> {selectedProject.date}
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <FaUser />
+                    {selectedProject.team}
+                  </p>
+                </div>
+                {/* skill */}
+                <div className="flex gap-2">
+                  <h4 className="w-18 font-bold">사용 기술</h4>
+                  <ul className="flex flex-wrap gap-2">
+                    {selectedProject.skill.map((name) => (
+                      <li
+                        key={name}
+                        className="flex items-center gap-1 text-sm"
+                      >
+                        {skillIcons[name] ?? <span>{name}</span>}
+                        <span>{name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex gap-2">
+                  <h4 className="w-18 font-bold">URL</h4>
+                  <a
+                    href={selectedProject.url}
+                    className="text-blue-600 underline"
+                    target="_blank"
+                  >
+                    {selectedProject.url}
+                  </a>
+                </div>
+                <div className="flex gap-2">
+                  <h4 className="w-18 font-bold">Github</h4>
+                  <a
+                    href={selectedProject.github}
+                    className="text-gray-400 text-sm"
+                    target="_blank"
+                  >
+                    {selectedProject.github}
+                  </a>
+                </div>
+              </div>
 
-              <p className="text-blue-600 underline mb-2">
-                <a href={selectedPopup.url} target="_blank">
-                  {selectedPopup.url}
-                </a>
-              </p>
-              <p className="text-gray-400 text-sm">
-                <a href={selectedPopup.github} target="_blank">
-                  {selectedPopup.github}
-                </a>
-              </p>
+              {/* 기능 설명 */}
+              <ul className="flex flex-col gap-6">
+                {selectedProject.features.map((feature, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex flex-col p-4 gap-2 rounded-xl"
+                    style={{
+                      backgroundColor:
+                        hoverIndex === index ? "#f3f4f6" : "transparent",
+                    }}
+                    onHoverStart={() => setHoverIndex(index)}
+                    onHoverEnd={() => setHoverIndex(null)}
+                  >
+                    <h4 className="text-xl font-bold">{feature.title}</h4>
+
+                    <div className="flex flex-col">
+                      <h5 className="mb-1 font-bold">핵심 기능</h5>
+                      <ul>
+                        {feature.core.map((item, index) => (
+                          <li key={index}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="flex flex-col">
+                      <h5 className="mb-1 font-bold">어려웠던 점</h5>
+                      <p className="flex gap-1">
+                        <span>문제:</span>
+                        {feature.difficult?.[0]}
+                      </p>
+                      <p className="flex gap-1">
+                        <span>해결:</span>
+                        {feature.difficult?.[1]}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col">
+                      <h5 className="mb-1 font-bold">회고</h5>
+                      <p>{feature.retrospect}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
           </div>
         )}

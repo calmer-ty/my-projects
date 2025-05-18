@@ -5,7 +5,7 @@ export default function ModalB<T>({
   isOpen,
   setIsOpen,
   children,
-  contStyle,
+  contentsStyle,
 }: IModalProps<T>) {
   return (
     <AnimatePresence>
@@ -22,7 +22,7 @@ export default function ModalB<T>({
           {/* 팝업 */}
           <motion.div
             layoutId={`card-${isOpen}`} // 같은 layoutId
-            className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-8 z-50 shadow-lg ${contStyle}`}
+            className={`fixed top-1/2 left-1/2 p-8 pr-6 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg z-50 shadow-lg ${contentsStyle}`}
           >
             {children}
           </motion.div>
