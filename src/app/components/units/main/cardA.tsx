@@ -71,12 +71,14 @@ export default function CardA() {
             <img className="w-full h-4/10 object-cover rounded-xl lg:w-4/10 lg:h-full" src={`/images/${selectedProject.bgSrc}`} alt={selectedProject.title} />
 
             {/* 콘텐츠 */}
-            <div className="flex flex-col gap-6 overflow-y-scroll break-keep">
+            <div className="flex flex-col gap-6 overflow-scroll break-keep">
               {/* 상단 서비스 소개 */}
               <div className="flex flex-col gap-4 p-4">
                 <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
                 <p className="text-mb font-semibold text-gray-500 ">{selectedProject.desc}</p>
-                <div className="flex gap-4">
+
+                {/* 프로젝트 기간 및 인원 */}
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <p className="flex items-center gap-2">
                     <FaRegCalendarAlt /> {selectedProject.date}
                   </p>
@@ -86,7 +88,7 @@ export default function CardA() {
                   </p>
                 </div>
                 {/* skill */}
-                <div className="flex gap-2">
+                <div className="flex flex-col gap-2 sm:flex-row">
                   <h4 className="w-18 shrink-0 font-bold">사용 기술</h4>
                   <ul className="flex flex-wrap gap-2">
                     {selectedProject.skill.map((name) => (
@@ -100,7 +102,7 @@ export default function CardA() {
 
                 {/* URL */}
                 {selectedProject.url && (
-                  <div className="flex gap-2">
+                  <div className="flex flex-col gap-2 sm:flex-row">
                     <h4 className="w-18 shrink-0 font-bold">URL</h4>
                     <a href={selectedProject.url} className="text-blue-600 underline" target="_blank">
                       {selectedProject.url}
@@ -109,7 +111,7 @@ export default function CardA() {
                 )}
 
                 {/* Github */}
-                <div className="flex gap-2">
+                <div className="flex flex-col gap-2 sm:flex-row">
                   <h4 className="w-18 shrink-0 font-bold">Github</h4>
                   <a href={selectedProject.github} className="text-gray-400 text-sm" target="_blank">
                     {selectedProject.github}
