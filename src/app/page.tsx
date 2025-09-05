@@ -1,11 +1,7 @@
 "use client";
 
-import Main from "./components/units/main";
+import Dashboard from "./components/units/dashboard";
 
 export default function Home() {
-  return (
-    <main>
-      <Main />
-    </main>
-  );
+  return <Dashboard />;
 }

@@ -1,31 +1,36 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import ModalB from "@/src/app/components/commons/modals/B";
-import PopupButtonA from "@/src/app/components/commons/buttons/popup/A";
-
 import { X } from "lucide-react";
 import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
 import { skillIcons } from "@/src/app/commons/types/constants/skillIcons";
 
+import ModalB from "@/src/app/components/commons/modals/B";
+import PopupButtonA from "@/src/app/components/commons/buttons/popup/A";
+
 import { items, projectData } from "./data";
 
-export default function CardA() {
+export default function DashboardUI() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const selectedProject = projectData.find((item) => item.id === selectedId);
 
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <>
+    <article className="flex flex-col h-screen">
       {/* 헤더  */}
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: "easeOut" }} className="px-12 py-10 text-5xl font-bold lg:px-20">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="px-12 py-10 text-5xl font-bold lg:px-20"
+      >
         PROJECTS
       </motion.h2>
 
       {/* 카드 컨텐츠 */}
       <motion.div
-        className="flex flex-col justify-between flex-1 px-12 mb-10 md:flex-row lg:px-20"
+        className="flex flex-col justify-between flex-1 h-full px-12 mb-10 md:flex-row lg:px-20"
         style={{ gap: "2rem" }}
         initial="hidden"
         animate="visible"
@@ -56,26 +61,48 @@ export default function CardA() {
             }}
           >
             {/* 배경이미지 */}
-            <img className="absolute inset-0 w-full h-full brightness-70 object-cover" src={`/images/${item.bgSrc}`} alt="freepik" />
-            <h3 className={`relative z-10 mb-2 text-sm font-bold text-${item.color}`}>{item.title}</h3>
-            <h4 className={`relative z-10 text-xl font-bold text-${item.color}`}>{item.desc}</h4>
+            <img
+              className="absolute inset-0 w-full h-full brightness-70 object-cover"
+              src={`/images/${item.bgSrc}`}
+              alt="freepik"
+            />
+            <h3
+              className={`relative z-10 mb-2 text-sm font-bold text-${item.color}`}
+            >
+              {item.title}
+            </h3>
+            <h4
+              className={`relative z-10 text-xl font-bold text-${item.color}`}
+            >
+              {item.desc}
+            </h4>
           </motion.div>
         ))}
       </motion.div>
 
       {/* 모달 */}
-      <ModalB isOpen={selectedId} setIsOpen={setSelectedId} contentsStyle="w-4/5 h-4/5 pt-12">
+      <ModalB
+        isOpen={selectedId}
+        setIsOpen={setSelectedId}
+        contentsStyle="w-4/5 h-4/5 pt-12"
+      >
         {selectedProject && (
           <div className="flex flex-col gap-6 h-full lg:flex-row">
             {/* 이미지 */}
-            <img className="w-full h-4/10 object-cover rounded-xl lg:w-4/10 lg:h-full" src={`/images/${selectedProject.bgSrc}`} alt={selectedProject.title} />
+            <img
+              className="w-full h-4/10 object-cover rounded-xl lg:w-4/10 lg:h-full"
+              src={`/images/${selectedProject.bgSrc}`}
+              alt={selectedProject.title}
+            />
 
             {/* 콘텐츠 */}
             <div className="flex flex-col gap-6 overflow-scroll break-keep">
               {/* 상단 서비스 소개 */}
               <div className="flex flex-col gap-4 p-4">
                 <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
-                <p className="text-mb font-semibold text-gray-500 ">{selectedProject.desc}</p>
+                <p className="text-mb font-semibold text-gray-500 ">
+                  {selectedProject.desc}
+                </p>
 
                 {/* 프로젝트 기간 및 인원 */}
                 <div className="flex flex-col gap-4 sm:flex-row">
@@ -92,7 +119,10 @@ export default function CardA() {
                   <h4 className="w-18 shrink-0 font-bold">사용 기술</h4>
                   <ul className="flex flex-wrap gap-2">
                     {selectedProject.skill.map((name) => (
-                      <li key={name} className="flex items-center gap-1 text-sm">
+                      <li
+                        key={name}
+                        className="flex items-center gap-1 text-sm"
+                      >
                         {skillIcons[name] ?? <span>{name}</span>}
                         <span>{name}</span>
                       </li>
@@ -104,7 +134,11 @@ export default function CardA() {
                 {selectedProject.url && (
                   <div className="flex flex-col gap-2 sm:flex-row">
                     <h4 className="w-18 shrink-0 font-bold">URL</h4>
-                    <a href={selectedProject.url} className="text-blue-600 underline" target="_blank">
+                    <a
+                      href={selectedProject.url}
+                      className="text-blue-600 underline"
+                      target="_blank"
+                    >
                       {selectedProject.url}
                     </a>
                   </div>
@@ -113,7 +147,11 @@ export default function CardA() {
                 {/* Github */}
                 <div className="flex flex-col gap-2 sm:flex-row">
                   <h4 className="w-18 shrink-0 font-bold">Github</h4>
-                  <a href={selectedProject.github} className="text-gray-400 text-sm" target="_blank">
+                  <a
+                    href={selectedProject.github}
+                    className="text-gray-400 text-sm"
+                    target="_blank"
+                  >
                     {selectedProject.github}
                   </a>
                 </div>
@@ -126,7 +164,8 @@ export default function CardA() {
                     key={index}
                     className="flex flex-col p-4 gap-2 rounded-xl"
                     style={{
-                      backgroundColor: hoverIndex === index ? "#f3f4f6" : "transparent",
+                      backgroundColor:
+                        hoverIndex === index ? "#f3f4f6" : "transparent",
                     }}
                     onHoverStart={() => setHoverIndex(index)}
                     onHoverEnd={() => setHoverIndex(null)}
@@ -164,10 +203,13 @@ export default function CardA() {
             </div>
           </div>
         )}
-        <PopupButtonA setIsOpen={setSelectedId} className="absolute top-3 right-3">
+        <PopupButtonA
+          setIsOpen={setSelectedId}
+          className="absolute top-3 right-3"
+        >
           <X className="" size={20} strokeWidth={3} color="black" />
         </PopupButtonA>
       </ModalB>
-    </>
+    </article>
   );
 }
