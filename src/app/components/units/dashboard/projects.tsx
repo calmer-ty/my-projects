@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 
 import { projects } from "./data";
+import { useEffect, useState } from "react";
 
 interface IDashboardProjectsProps {
   setSelectedId: (value: React.SetStateAction<number | null>) => void;
@@ -10,13 +11,19 @@ interface IDashboardProjectsProps {
 export default function DashboardProjects({ setSelectedId }: IDashboardProjectsProps) {
   const MotionCard = motion(Card);
 
+  // 첫 렌더링시에만 애니메이션 실행
+  const [hasAnimated, setHasAnimated] = useState(false);
+  useEffect(() => {
+    setHasAnimated(true);
+  }, []);
+
   return (
     <motion.div
       className="flex flex-col justify-between flex-1 h-full px-12 mb-10 md:flex-row lg:px-20"
       style={{ gap: "2rem" }}
       // 자식이 순차적으로 보여지게
-      initial="hidden"
-      animate="visible"
+      initial={hasAnimated ? false : "hidden"}
+      animate={hasAnimated ? false : "visible"}
       variants={{
         hidden: {},
         visible: {
