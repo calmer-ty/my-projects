@@ -9,9 +9,9 @@ interface IDashboardDialogProps {
   selectedId: number | null;
   setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
 }
-export function DashboardDialog({ selectedId, setSelectedId }: IDashboardDialogProps) {
+export default function DashboardDialog({ selectedId, setSelectedId }: IDashboardDialogProps) {
   const selectedProject = projectData.find((p) => p.id === selectedId);
-  console.log("selectedProject: ", selectedProject);
+
   return (
     <Dialog open={!!selectedId} onOpenChange={() => setSelectedId(null)}>
       <DialogContent className="p-10 max-w-100 sm:max-w-130 md:max-w-170 lg:max-w-240 sm:max-h-150">
@@ -21,8 +21,6 @@ export function DashboardDialog({ selectedId, setSelectedId }: IDashboardDialogP
               <DialogTitle>{selectedProject.title}</DialogTitle>
               <DialogDescription>{selectedProject.desc}</DialogDescription>
             </DialogHeader>
-
-            {/* <img className="hidden object-cover rounded-xl md:block" src={`/images/${selectedProject.bgSrc}`} alt={selectedProject.title} /> */}
 
             {/* 내용 */}
             <div className="grid gap-6 break-keep overflow-scroll max-h-100">

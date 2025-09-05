@@ -5,7 +5,6 @@ export const projects = [
     desc: "원하는 매물을 한눈에.",
     content: "Item 1 상세 내용",
     bgSrc: "real-estate.jpg",
-    color: "white",
   },
   {
     id: 2,
@@ -13,7 +12,6 @@ export const projects = [
     desc: "다양한 상품을 구경해보세요.",
     content: "Item 2 상세 내용",
     bgSrc: "used-market.jpg",
-    color: "white",
   },
   {
     id: 3,
@@ -21,7 +19,6 @@ export const projects = [
     desc: "자신의 생각을 공유해보세요.",
     content: "Item 3 상세 내용",
     bgSrc: "free-board.jpg",
-    color: "white",
   },
 ];
 export const projectData = [
