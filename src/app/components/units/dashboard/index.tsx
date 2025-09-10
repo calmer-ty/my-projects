@@ -5,7 +5,7 @@ import DashboardProjects from "./projects";
 import DashboardDialog from "./dialog";
 
 export default function DashboardUI() {
-  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
     <article className="flex flex-col h-screen">

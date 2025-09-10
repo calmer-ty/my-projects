@@ -3,18 +3,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
 
 import { skillIcons } from "@/src/app/commons/types/constants/skillIcons";
-import { projectData } from "./data";
+import { projectsData } from "./data";
 
 interface IDashboardDialogProps {
-  selectedId: number | null;
-  setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
+  selectedId: string | null;
+  setSelectedId: React.Dispatch<React.SetStateAction<string | null>>;
 }
 export default function DashboardDialog({ selectedId, setSelectedId }: IDashboardDialogProps) {
-  const selectedProject = projectData.find((p) => p.id === selectedId);
+  const selectedProject = projectsData.find((p) => p.id === selectedId);
 
   return (
     <Dialog open={!!selectedId} onOpenChange={() => setSelectedId(null)}>
-      <DialogContent className="p-10 max-w-100 sm:max-w-130 md:max-w-170 lg:max-w-240 sm:max-h-150">
+      <DialogContent
+        className="p-10 max-w-100 
+          sm:max-w-130 md:max-w-170 lg:max-w-240 sm:h-150"
+      >
         {selectedProject && (
           <>
             <DialogHeader>

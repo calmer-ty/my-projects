@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { Card } from "@/components/ui/card";
 
 import { projects } from "./data";
-import { useEffect, useState } from "react";
 
 interface IDashboardProjectsProps {
-  setSelectedId: (value: React.SetStateAction<number | null>) => void;
+  setSelectedId: (value: React.SetStateAction<string | null>) => void;
 }
 export default function DashboardProjects({ setSelectedId }: IDashboardProjectsProps) {
   const MotionCard = motion(Card);
