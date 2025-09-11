@@ -22,8 +22,8 @@ export default function DashboardProjects({ setSelectedId }: IDashboardProjectsP
         initial={!hasAnimatedRef.current ? { opacity: 0, y: 30 } : {}}
         animate={!hasAnimatedRef.current ? { opacity: 1, y: 0 } : {}}
         transition={{
-          delay: 1, // h2 애니메이션 끝난 뒤 약간의 추가 딜레이
-          duration: 1,
+          delay: 0.5, // h2 애니메이션 끝난 뒤 약간의 추가 딜레이
+          duration: 0.7,
           ease: "easeOut",
         }}
         onAnimationComplete={() => {

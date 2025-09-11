@@ -11,7 +11,7 @@ export const projects = [
     title: "Vintage",
     desc: "빈티지 아이템, 이제 한 곳에서 관리하세요.",
     content: "Item 1 상세 내용",
-    bgSrc: "vintage-crp.jpg",
+    bgSrc: "vintage-management.jpg",
   },
   {
     id: "project-03",
