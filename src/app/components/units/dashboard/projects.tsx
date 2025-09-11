@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 
 import { Card } from "@/components/ui/card";
@@ -13,26 +13,21 @@ export default function DashboardProjects({ setSelectedId }: IDashboardProjectsP
   const MotionCard = motion(Card);
   const MotionCarousel = motion(Carousel);
 
-  // 첫 렌더링시에만 애니메이션 실행
-  const [hasAnimated, setHasAnimated] = useState(false);
-  useEffect(() => {
-    const timeout = setTimeout(() => setHasAnimated(true), 250); // 50ms 정도
-    return () => clearTimeout(timeout);
-  }, []);
-
-  console.log("hasAnimated:", hasAnimated);
+  const hasAnimatedRef = useRef(false);
 
   return (
     <>
       <MotionCarousel
         className="w-2xs sm:w-full"
-        initial={hasAnimated ? {} : { opacity: 0, y: 30 }}
-        animate={hasAnimated ? {} : { opacity: 1, y: 0 }} // 한 번만
-        viewport={{ once: true }}
+        initial={!hasAnimatedRef.current ? { opacity: 0, y: 30 } : {}}
+        animate={!hasAnimatedRef.current ? { opacity: 1, y: 0 } : {}}
         transition={{
-          delay: 0.4, // h2 애니메이션 끝난 뒤 약간의 추가 딜레이
-          duration: 0.7,
+          delay: 1, // h2 애니메이션 끝난 뒤 약간의 추가 딜레이
+          duration: 1,
           ease: "easeOut",
+        }}
+        onAnimationComplete={() => {
+          hasAnimatedRef.current = true; // 최초 애니메이션 끝나면 true로 고정
         }}
       >
         <CarouselContent className="-ml-0">
