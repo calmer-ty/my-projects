@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import DashboardProjects from "./projects";
@@ -7,16 +7,21 @@ import DashboardDialog from "./dialog";
 export default function DashboardUI() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => setIsClient(true), []);
+
   return (
     <article
       className="flex flex-col items-center mx-10 
         sm:mx-20"
     >
       {/* 헤더  */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: "easeOut" }} className="w-full py-10 text-4xl">
-        <h2 className="text-4xl font-bold">프로젝트</h2>
-        <p className="mt-2 text-gray-500 text-lg">진행한 작업과 실험들을 한눈에 확인해보세요.</p>
-      </motion.div>
+      {isClient && (
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: "easeOut" }} className="w-full py-10 text-4xl">
+          <h2 className="text-4xl font-bold">프로젝트</h2>
+          <p className="mt-2 text-gray-500 text-lg">진행한 작업과 실험들을 한눈에 확인해보세요.</p>
+        </motion.div>
+      )}
 
       {/* 프로젝트 */}
       <DashboardProjects setSelectedId={setSelectedId} />
