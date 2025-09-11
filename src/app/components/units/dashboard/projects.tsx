@@ -20,7 +20,8 @@ export default function DashboardProjects({ setSelectedId }: IDashboardProjectsP
       <MotionCarousel
         className="w-2xs sm:w-full"
         initial={!hasAnimatedRef.current ? { opacity: 0, y: 30 } : {}}
-        animate={!hasAnimatedRef.current ? { opacity: 1, y: 0 } : {}}
+        whileInView={!hasAnimatedRef.current ? { opacity: 1, y: 0 } : {}}
+        viewport={{ once: false }}
         transition={{
           delay: 0.5, // h2 애니메이션 끝난 뒤 약간의 추가 딜레이
           duration: 0.7,
