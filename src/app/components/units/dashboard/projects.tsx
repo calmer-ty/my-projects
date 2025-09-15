@@ -9,6 +9,7 @@ import { projects } from "./data";
 interface IDashboardProjectsProps {
   setSelectedId: (value: React.SetStateAction<string | null>) => void;
 }
+
 export default function DashboardProjects({ setSelectedId }: IDashboardProjectsProps) {
   const MotionCard = motion(Card);
   const MotionCarousel = motion(Carousel);

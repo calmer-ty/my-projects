@@ -27,6 +27,7 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
 
             {/* 내용 */}
             <div className="grid gap-6 break-keep overflow-scroll max-h-100">
+              {/* 프로젝트 개요 */}
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <p className="flex items-center gap-2">
@@ -66,7 +67,7 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
                   </a>
                 </div>
               </div>
-
+              {/* 프로젝트 기능 */}
               {selectedProject.features.map((feature, idx) => (
                 <Card key={`${feature.title}_${idx}`}>
                   <CardHeader>
