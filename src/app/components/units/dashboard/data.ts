@@ -74,7 +74,7 @@ export const projectsData = [
     desc: "사용자가 등록한 아이템을 기반으로 매입가를 예측하고, 판매 시 예상 수익을 계산할 수 있는 서비스입니다.",
     date: "2024.05 ~ 2025.09",
     team: "개인 프로젝트",
-    url: "https://realestate.calmerproject.store",
+    url: "https://vintagemanager.calmerproject.store",
     github: "https://github.com/calmer-ty/vintage-manager",
     skill: ["React", "Next.js", "Firebase", "REST API", "shadcn"],
 

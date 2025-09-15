@@ -41,7 +41,6 @@ export default function DashboardProjects({ setSelectedId }: IDashboardProjectsP
             >
               <div className="h-full py-4">
                 <MotionCard
-                  key={p.id}
                   onClick={() => setSelectedId(p.id)}
                   className={`relative overflow-hidden size-full p-6 rounded-xl cursor-pointer`}
                   // 부모 속성 값에 따라 효과 적용
