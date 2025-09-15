@@ -50,7 +50,6 @@ export default function DashboardProjects({ setSelectedId }: IDashboardProjectsP
                   }}
                   whileHover={{
                     y: -8,
-                    // boxShadow: "inset 0px 12px 24px rgba(0, 0, 0, 0.15)",
                     transition: { type: "spring", stiffness: 300 },
                   }}
                 >

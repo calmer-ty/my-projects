@@ -15,8 +15,8 @@ export default function DashboardUI() {
       {/* 헤더  */}
 
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.4, ease: "easeOut" }} className="w-full py-10 text-4xl">
-        <h2 className="text-4xl font-bold">프로젝트</h2>
-        <p className="mt-2 text-gray-500 text-lg">진행한 작업과 실험들을 한눈에 확인해보세요.</p>
+        <h2 className="text-4xl font-bold">TAEYEON&apos;S PORTFOLIO</h2>
+        <p className="mt-2 text-gray-500 text-lg">아이디어를 실현하고 협업한 다양한 프로젝트를 만나보세요.</p>
       </motion.div>
 
       {/* 프로젝트 */}
