@@ -43,6 +43,7 @@ export const projectsData = [
     desc: "Google Map을 활용하여 사용자가 원하는 장소에 메모를 작성하고 마커를 저장할 수 있습니다. 저장된 마커는 북마크별로 목록으로 확인할 수 있습니다. 나만의 여행을 지도에 기록해보세요!",
     date: "2025.06 ~ 2025.09",
     team: "팀 프로젝트",
+    url: "https://travel-diary.hyerin.store/",
     github: "https://github.com/calmer-ty/travel-diary",
     skill: ["React", "Next.js", "Firebase", "Google Maps", "ShadCn"],
 
