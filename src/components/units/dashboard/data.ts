@@ -76,7 +76,7 @@ export const projectsData = [
     team: "개인 프로젝트",
     url: "https://vintage-manager.calmerproject.store",
     github: "https://github.com/calmer-ty/vintage-manager",
-    skill: ["React", "Next.js", "Firebase", "REST API", "shadcn"],
+    skill: ["React", "Next.js", "Firebase", "REST API", "ShadCn"],
 
     features: [
       {
