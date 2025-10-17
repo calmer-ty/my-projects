@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import DashboardProjects from "./projects";
-import DashboardDialog from "./dialog";
+import DashboardProjects from "./DashboardProjects";
+import DashboardDialog from "./DashboardDialog";
 
 export default function DashboardUI() {
   const [selectedId, setSelectedId] = useState<string | null>(null);

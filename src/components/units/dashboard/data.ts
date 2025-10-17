@@ -43,7 +43,7 @@ export const projectsData = [
     desc: "Google Map을 활용하여 사용자가 원하는 장소에 메모를 작성하고 마커를 저장할 수 있습니다. 저장된 마커는 북마크별로 목록으로 확인할 수 있습니다. 나만의 여행을 지도에 기록해보세요!",
     date: "2025.06 ~ 2025.09",
     team: "팀 프로젝트",
-    url: "https://travel-diary.hyerin.store/",
+    url: "https://travel-diary.hyerin.store",
     github: "https://github.com/calmer-ty/travel-diary",
     skill: ["React", "Next.js", "Firebase", "Google Maps", "ShadCn"],
 
@@ -74,7 +74,7 @@ export const projectsData = [
     desc: "사용자가 등록한 아이템을 기반으로 매입가를 예측하고, 판매 시 예상 수익을 계산할 수 있는 서비스입니다.",
     date: "2024.05 ~ 2025.09",
     team: "개인 프로젝트",
-    url: "https://vintagemanager.calmerproject.store",
+    url: "https://vintage-manager.calmerproject.store",
     github: "https://github.com/calmer-ty/vintage-manager",
     skill: ["React", "Next.js", "Firebase", "REST API", "shadcn"],
 
