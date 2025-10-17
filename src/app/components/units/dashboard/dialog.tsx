@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
 
-import { skillIcons } from "@/src/app/commons/types/constants/skillIcons";
+import { skillIcons } from "@/app/commons/types/constants/skillIcons";
 import { projectsData } from "./data";
 
 interface IDashboardDialogProps {
