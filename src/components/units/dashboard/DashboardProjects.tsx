@@ -17,7 +17,13 @@ export default function DashboardProjects({ setSelectedId }: IDashboardProjectsP
   const hasAnimatedRef = useRef(false);
 
   return (
-    <>
+    <section id="projects" className="w-full h-screen">
+      {/* 헤더  */}
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.4, ease: "easeOut" }} className="w-full py-10 text-4xl">
+        <h2 className="text-4xl font-bold">TAEYEON&apos;S PORTFOLIO</h2>
+        <p className="mt-2 text-gray-500 text-lg">아이디어를 실현하고 협업한 다양한 프로젝트를 만나보세요.</p>
+      </motion.div>
+
       <MotionCarousel
         className="w-2xs sm:w-full"
         initial={!hasAnimatedRef.current ? { opacity: 0, y: 30 } : {}}
@@ -71,46 +77,6 @@ export default function DashboardProjects({ setSelectedId }: IDashboardProjectsP
         <CarouselPrevious />
         <CarouselNext />
       </MotionCarousel>
-      {/* <motion.div
-        className="grid grid-cols-1 gap-8 h-full px-12 pb-10
-        lg:px-20 sm:grid-cols-3"
-        // 자식이 순차적으로 보여지게
-        initial={hasAnimated ? false : "hidden"}
-        animate={hasAnimated ? false : "visible"}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.2,
-              delayChildren: 0.4,
-            },
-          },
-        }}
-      >
-        {projects.map((p) => (
-          <MotionCard
-            key={p.id}
-            onClick={() => setSelectedId(p.id)}
-            className={`relative overflow-hidden w-full p-6 rounded-xl cursor-pointer`}
-            // 부모 속성 값에 따라 효과 적용
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            whileHover={{
-              y: -8,
-              boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.15)",
-              transition: { type: "spring", stiffness: 300 },
-            }}
-          >
-       
-            <img className="absolute inset-0 w-full h-full brightness-50 object-cover" src={`/images/${p.bgSrc}`} alt="freepik" />
-        
-            <h5 className={`relative z-10 mb-2 font-bold text-white`}>{p.title}</h5>
-            <p className={`relative z-10 text-xl font-bold text-white`}>{p.desc}</p>
-          </MotionCard>
-        ))}
-      </motion.div> */}
-    </>
+    </section>
   );
 }

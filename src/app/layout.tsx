@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <main>{children}</main>
+        <main className="h-screen overflow-scroll scroll-smooth snap-y snap-mandatory">{children}</main>
       </body>
     </html>
   );
