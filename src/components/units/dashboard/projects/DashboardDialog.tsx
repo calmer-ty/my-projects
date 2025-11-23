@@ -31,7 +31,6 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">프로젝트 개요</CardTitle>
-                  {/* <CardDescription>Card Description</CardDescription> */}
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {/* 작업 기간 및 프로젝트 인원 */}
@@ -76,23 +75,23 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
                 </CardContent>
               </Card>
 
-              {/* 프로젝트 기능 */}
+              {/* 기능 */}
               {selectedProject.features.map((feature, idx) => (
                 <div key={`${feature.title}_${idx}`} className="px-4 py-8 border-b border-gray-200 last:border-0">
-                  <div className="mb-4 font-bold text-lg">{feature.title}</div>
+                  <h3 className="mb-4 font-bold text-lg">{feature.title}</h3>
 
-                  <div className="ml-2 space-y-6">
-                    <div className="flex flex-col">
-                      <span className="mb-1 text-md font-semibold text-gray-700">{selectedProject.team === "개인 프로젝트" ? "핵심" : "담당"} 기능</span>
+                  <ul className="ml-2 space-y-6">
+                    <li>
+                      <h4 className="mb-2 text-md font-semibold text-gray-700">{selectedProject.team === "개인 프로젝트" ? "핵심" : "담당"} 기능</h4>
                       <ul className="space-y-2 text-sm text-gray-600">
                         {feature.core.map((item, index) => (
                           <li key={index}>• {item}</li>
                         ))}
                       </ul>
-                    </div>
+                    </li>
 
-                    <div className="flex flex-col">
-                      <span className="mb-1 text-md font-semibold text-gray-700">어려웠던 점</span>
+                    <li>
+                      <h4 className="mb-2 text-md font-semibold text-gray-700">어려웠던 점</h4>
                       <ul className="space-y-2">
                         <li className="flex gap-1 text-sm text-gray-600">
                           <span className="shrink-0">• 문제:</span>
@@ -103,15 +102,29 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
                           {feature.difficult.solve}
                         </li>
                       </ul>
-                    </div>
+                    </li>
 
-                    <div className="flex flex-col">
-                      <span className="mb-1 text-md font-semibold text-gray-700">회고</span>
+                    <li>
+                      <h4 className="mb-2 text-md font-semibold text-gray-700">회고</h4>
                       <p className="text-sm text-gray-600">• {feature.retrospect}</p>
-                    </div>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
               ))}
+              {/* 향후 계획 */}
+              {selectedProject.futurePlans && (
+                <div className="px-4 py-8 border-b border-gray-200 last:border-0">
+                  <h3 className="mb-4 font-bold text-lg">향후 계획</h3>
+                  <div className="ml-2 space-y-6">
+                    <h4 className="mb-2 text-md font-semibold text-gray-700">{selectedProject.futurePlans.title}</h4>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      {selectedProject.futurePlans.contents.map((content, index) => (
+                        <li key={index}>• {content}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
           </>
         )}
