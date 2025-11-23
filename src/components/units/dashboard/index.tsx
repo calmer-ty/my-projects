@@ -8,8 +8,6 @@ import DashboardProjects from "./projects";
 import DashboardSkills from "./DashboardSkills";
 
 export default function DashboardUI() {
-  const MotionButton = motion(Button);
-
   return (
     <article className="flex flex-col items-center">
       <motion.header
@@ -30,12 +28,13 @@ export default function DashboardUI() {
             Projects
           </Button>
         </div>
-        <MotionButton
-          variant="outline"
-          className="w-10 h-10 rounded-full"
+        <motion.a
+          href="https://github.com/calmer-ty?tab=repositories"
+          target="_blank"
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-gray-50 hover:bg-gray-200 shadow-md hover:shadow-lg transition-colors duration-200"
           animate={{
             // opacity: [1, 0.5, 1], // 깜박임
-            scale: [1, 1.2, 1], // 살짝 커졌다 작아짐
+            scale: [1, 1.1, 1], // 살짝 커졌다 작아짐
           }}
           transition={{
             duration: 1.5,
@@ -44,8 +43,8 @@ export default function DashboardUI() {
             ease: "easeInOut",
           }}
         >
-          <Github size={10} />
-        </MotionButton>
+          <Github size={24} className="text-gray-800" />
+        </motion.a>
       </motion.header>
 
       <DashboardHero />
