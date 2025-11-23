@@ -16,11 +16,10 @@ export default function DashboardProjects() {
 
   return (
     <section id="projects" className="w-full h-screen pt-16">
-      {/* 프로젝트 */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
         className="flex flex-col h-full px-10 sm:px-20 pt-12 pb-20"
       >

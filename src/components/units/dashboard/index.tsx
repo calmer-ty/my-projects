@@ -11,7 +11,7 @@ export default function DashboardUI() {
   return (
     <article className="flex flex-col items-center">
       <motion.header
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="fixed flex justify-between items-center w-full h-16 px-8 bg-white z-10"
