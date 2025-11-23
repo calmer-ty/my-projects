@@ -36,11 +36,11 @@ const tabs = [
   },
 ];
 
-export default function DashboardSkill() {
+export default function DashboardSkills() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <section id="skill" className="w-full max-w-180 py-40 text-center px-10">
+    <section id="skills" className="w-full max-w-180 py-40 text-center px-10">
       <h2 className="mb-4 font-medium text-sky-500">기술 스택</h2>
       <p className="mb-8 text-2xl font-bold">사용할 수 있는 기술과 선택 이유</p>
       {/* Nav */}
