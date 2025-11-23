@@ -1,28 +1,18 @@
-"use client";
-
-import { motion, useScroll, useSpring } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 
+import "./styles.css";
 import DashboardHero from "./DashboardHero";
 import DashboardProjects from "./projects";
-import DashboardAbout from "./DashboardAbout";
-
-const components = [DashboardHero, DashboardProjects, DashboardAbout];
 
 export default function DashboardUI() {
-  const { scrollYProgress } = useScroll();
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   const MotionButton = motion(Button);
 
   return (
-    <>
+    <article>
       <motion.header
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,10 +49,15 @@ export default function DashboardUI() {
         </MotionButton>
       </motion.header>
 
-      {components.map((Component, idx) => (
-        <Component key={idx} />
-      ))}
-      <motion.div className="fixed top-16 bottom-0 right-2 w-1 bg-[#8df0cc] origin-center" style={{ scaleY }} />
-    </>
+      <DashboardHero />
+      <DashboardProjects />
+
+      {/* About (짧게) → 이 위치에 추가 */}
+      <section id="about" className="w-full h-screen pt-16">
+        <p>안녕하세요, 사용자가 체감할 수 있는 편리함을 만드는 프론트엔드 개발자 김태연입니다.</p>
+        <p>React · Next.js · Firebase 기반으로 실제 서비스 기능 개발과 배포를 주도해 왔습니다.</p>
+        <p>기능 구현뿐 아니라 사용자 경험과 유지보수성을 고려한 개발을 중요하게 생각합니다.</p>
+      </section>
+    </article>
   );
 }

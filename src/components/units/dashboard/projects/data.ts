@@ -41,30 +41,30 @@ export const projectsData = [
     id: "project-01",
     title: "트래블 다이어리",
     desc: "원하는 장소에 마커를 통해 메모를 작성하고, 북마크별로 메모를 관리하여 나만의 여행을 지도에 기록해보세요!",
-    date: "2025.06 ~ 2025.09",
+    date: "2025.06 ~ 업데이트 중",
     team: "팀 프로젝트",
     url: "https://travel-diary.hyerin.store",
     github: "https://github.com/calmer-ty/travel-diary",
-    skill: ["React", "Next.js", "Firebase", "Google Maps", "ShadCn"],
+    skills: [{ icon: "Google Maps", reason: "세계 지도의 데이터를 구현할 수 있는 것 중에 가장 접근성이 좋다고 생각하여 선정하였습니다." }],
 
     features: [
       {
-        title: "[개인 작업] 구글 맵을 활용한 마커 표시 및 관리",
-        core: ["구글 맵의 POI(Point of Interest)을 활용하여 사용자가 원하는 장소에 마커를 추가.", "마커 클릭 시 정보창을 통해 메모 등록 / 수정 / 삭제 가능."],
+        title: "Google Maps을 활용한 데이터 시각화 및 관리",
+        core: ["Google Maps의 POI(Point of Interest) 데이터를 통해 사용자가 원하는 장소에 마커를 렌더링합니다.", "추가로 생성된 마커 클릭 시 모달창을 통해 데이터를 수정, 삭제할 수 있습니다."],
         difficult: {
-          problem: "기획 단계에서 지도 마커를 어떠한 데이터의 타겟으로 표시해야 할지 어려움이 있었습니다.",
-          solve: "팀원끼리 이 문제에 대해 의논하면서 마커를 사용해보고 구글 맵 문서에서 POI를 활용할 수 있다는 점을 통해 해결했습니다.",
+          problem: "기획 과정에서 지도 상 마커 렌더링 대상 데이터 선정이 핵심 과제였습니다.",
+          solve: "팀원과 논의하며 마커 사용 방식을 검토했고, 구글 맵 문서의 POI(Point of Interest) 활용 방법을 참고하여 문제를 해결했습니다.",
         },
-        retrospect: "맵에는 다양한 데이터들을 활용할 수 있다는 점을 알았고, 팀원들과 원활한 소통이 작업 속도를 끌어올릴 수 있다고 생각했습니다.",
+        retrospect: "맵에서는 다양한 데이터를 활용할 수 있음을 확인했고, 팀원들과의 원활한 소통이 작업 속도를 높이는 데 큰 도움이 되었습니다.",
       },
       {
-        title: "[개인 작업] 북마크 설정에 따라 기록 리스트 필터링",
-        core: ["북마크별로 원하는 기록 리스트로 확인 가능."],
+        title: "북마크로 기록 정렬",
+        core: ["북마크별로 사용자가 지도에서 기록했던 데이터들을 정리하여 렌더링합니다."],
         difficult: {
-          problem: "리스트 페이지에서 북마크에 해당되는 데이터만 필터링해 보여주는 기능을 구현하는 과정에서 어려움이 있었습니다.",
-          solve: "북마크 데이터를 별도로 생성하여 마커 데이터와 매칭했습니다.",
+          problem: "북마크에 해당되는 데이터만 필터링하는 기능을 구현할 때, 어떤 방식으로 접근해야할지 감을 잡지 못했습니다..",
+          solve: "지도 관련 플랫폼을 찾아 북마크 기능을 참고하고, AI 도구를 통해 실무에서 북마크 데이터를 어떻게 활용하는지 탐색하여 별도의 데이터 컬렉션을 생성하여 마커 데이터와 매칭했습니다.",
         },
-        retrospect: "데이터 필터링 기능을 구현할 때, 추가 데이터를 생성해야 한다는 점을 고려해야 함을 깨달았습니다.",
+        retrospect: "감이 잡히지 않는 기능을 구현할 때, 비슷한 기능을 제공하는 플랫폼과 실무에서 어떻게 활용하는지 조사하는 과정이 큰 도움이 된다는 점을 깨달았습니다.",
       },
     ],
   },
@@ -72,31 +72,31 @@ export const projectsData = [
     id: "project-02",
     title: "빈티지 노트",
     desc: "여러 국가에서 매입한 상품 정보들을 기록하고, 예상 수익을 계산해보세요!",
-    date: "2024.05 ~ 2025.09",
+    date: "2025.05 ~ 2025.10",
     team: "개인 프로젝트",
     url: "https://vintage-manager.calmerproject.store",
     github: "https://github.com/calmer-ty/vintage-manager",
-    skill: ["React", "Next.js", "Firebase", "REST API", "ShadCn"],
+    skills: [{ icon: "환율 REST API", reason: "해외 상품들을 구매하기 위해서는 외국 통화와 환전을 거쳐야 하기 때문에 필수로 사용하였습니다." }],
 
     features: [
       {
-        title: "환율을 반영한 가격 변환",
-        core: ["물품을 구매할 때 사용한 화폐를 원화로 환산하여 데이터 등록.", "환율 API를 활용하여 실시간 환율 반영."],
+        title: "외국 통화 데이터를 원화로 환산",
+        core: ["사용한 통화 데이터와 원화로 환산한 데이터를 객체로 저장합니다."],
         difficult: {
-          problem: "하루하루 변동하는 외국 통화 데이터를 어떻게 저장하고 관리할지 고민했습니다.",
-          solve: "직접 프로젝트를 사용해보며 사용한 통화를 셀렉트로 선택하고, 그 데이터를 환율 정보와 함께 저장할 수 있도록 구현했습니다.",
+          problem: "변동하는 통화 데이터와 원화로 환산해 저장할 때, 데이터 필드 구조가 복잡해 활용이 어려워 저장 로직을 자주 수정해야 했습니다.",
+          solve: "사용 통화와 환산 금액 데이터를 함께 하나의 필드에 저장하는 방법을 AI 도구를 참고해 확인했습니다.",
         },
-        retrospect: "단순히 기능을 구현하는 것보다, 데이터를 어떤 구조로 저장하고 활용할지 미리 설계하는 것이 중요하다는 점을 느꼈습니다.",
+        retrospect: "프로젝트에서 필요한 데이터와 그 구조를 미리 설계하고 활용 방안을 고민하는 것이 중요하다는 점을 배웠습니다.",
       },
       {
-        title: "입고 & 판매 관리 기능 연동",
-        core: ["매입한 상품을 기록한 뒤 사용자 설정을 통해 판매 데이터로 이동."],
+        title: "입고 & 판매 관리 데이터 연동",
+        core: ["입고 관리 데이터에서 판매에 필요한 데이터만 필터링하여 판매 관리 데이터에 저장합니다."],
         difficult: {
-          problem: "판매 / 매입 기능을 따로 작업한 상태에서, 둘의 기능을 조합하는 과정에서 많은 수정이 필요했습니다.",
-          solve: "2가지 기능을 염두하여 매입 기능을 먼저 별도 브랜치에서 구현하고, 이후 판매 기능과 연동했습니다.",
+          problem: "입고와 판매 기능을 따로 개발한 상태에서, 두 기능을 통합하는 과정에서 여러 번 수정이 필요했습니다.",
+          solve: "별도 브랜치에서 통합 구현이 가능한지 확인하고, 연동 가능하다는 판단 후 두 기능을 성공적으로 통합했습니다.",
         },
         retrospect:
-          "처음에는 매입과 판매 기능이 단순히 각각 필요하다고만 생각했습니다. 하지만 직접 사용해보면서 두 기능이 유기적으로 연결될 때 서비스가 훨씬 편리해진다는 점을 깨달았습니다. 이를 통해 사용자의 실제 이용 흐름을 고려한 기능 설계의 중요성을 느꼈습니다.",
+          "처음에는 입고 & 판매 기능이 각각 필요하다고 생각했습니다. 하지만 직접 사용해보면서 두 기능이 유기적으로 연결될 때 서비스가 훨씬 편리해진다는 점을 깨달았습니다. 이를 통해 사용자의 실제 이용 흐름을 고려한 기능 설계의 중요성을 느꼈습니다.",
       },
     ],
   },
@@ -108,7 +108,8 @@ export const projectsData = [
     team: "개인 프로젝트",
     url: "https://realestate.calmerproject.store",
     github: "https://github.com/calmer-ty/frontend-real-estate",
-    skill: ["React", "Next.js", "Emotion", "Firebase", "Naver Maps", "REST API"],
+    // skills: ["React", "Next.js", "Emotion", "Firebase", "Naver Maps", "REST API"],
+    skills: [{ icon: "Google Maps", reason: "구글 맵 API를 활용한 지도 표시 및 마커 관리 기능 구현" }],
 
     features: [
       {
@@ -137,7 +138,8 @@ export const projectsData = [
     team: "개인 프로젝트",
     url: "",
     github: "https://github.com/calmer-ty/codecamp-frontend_portfolio",
-    skill: ["React", "Next.js", "Emotion", "GraphQL", "Kakao Maps"],
+    // skills: ["React", "Next.js", "Emotion", "GraphQL", "Kakao Maps"],
+    skills: [{ icon: "Google Maps", reason: "구글 맵 API를 활용한 지도 표시 및 마커 관리 기능 구현" }],
 
     features: [
       {
@@ -159,7 +161,8 @@ export const projectsData = [
     team: "개인 프로젝트",
     url: "",
     github: "https://github.com/calmer-ty/codecamp-frontend_portfolio",
-    skill: ["React", "Next.js", "Emotion", "GraphQL"],
+    // skills: ["React", "Next.js", "Emotion", "GraphQL"],
+    skills: [{ icon: "Google Maps", reason: "구글 맵 API를 활용한 지도 표시 및 마커 관리 기능 구현" }],
 
     features: [
       {
