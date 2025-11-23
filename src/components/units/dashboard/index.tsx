@@ -1,28 +1,17 @@
-"use client";
-
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 
-import DashboardHero from "./DashboardHero";
+import DashboardHero from "./hero";
 import DashboardProjects from "./projects";
-import DashboardAbout from "./DashboardAbout";
-
-const components = [DashboardHero, DashboardProjects, DashboardAbout];
+import DashboardSkill from "./DashboardSkill";
 
 export default function DashboardUI() {
-  const { scrollYProgress } = useScroll();
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   const MotionButton = motion(Button);
 
   return (
-    <>
+    <article className="flex flex-col items-center">
       <motion.header
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,10 +48,18 @@ export default function DashboardUI() {
         </MotionButton>
       </motion.header>
 
-      {components.map((Component, idx) => (
-        <Component key={idx} />
-      ))}
-      <motion.div className="fixed top-16 bottom-0 right-2 w-1 bg-[#8df0cc] origin-center" style={{ scaleY }} />
-    </>
+      <DashboardHero />
+      <DashboardSkill />
+      <DashboardProjects />
+
+      {/* <section id="skill" className="w-full pt-16">
+        <p>기술 스택</p>
+        <p>
+          React · Next.js · Firebase를 사용하여 실제 서비스 기능을 개발하고 배포했습니다. 이를 선택한 이유는 컴포넌트 기반 구조와 SSR/SSG 지원으로 유지보수와 확장성이 뛰어나고, Firebase를 통해 실시간
+          데이터와 인증 기능을 간편하게 구현할 수 있기 때문입니다.
+        </p>
+        <p>단순히 기능 구현에 그치지 않고, 사용자 경험과 유지보수성을 고려하여 클린 코드 작성과 효율적인 아키텍처 설계에 집중하고 있습니다.</p>
+      </section> */}
+    </article>
   );
 }

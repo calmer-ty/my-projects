@@ -15,14 +15,14 @@ export default function DashboardProjects() {
   const MotionCard = motion(Card);
 
   return (
-    <section id="projects" className="h-screen snap-start pt-16">
+    <section id="projects" className="w-full h-screen pt-16">
       {/* 프로젝트 */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-        className="flex flex-col h-full px-20 pt-12 pb-20"
+        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        className="flex flex-col h-full px-10 sm:px-20 pt-12 pb-20"
       >
         {/* 상단 제목 */}
         <div className="w-full py-6 font-bold text-2xl">아이디어를 실현하고 협업한 다양한 프로젝트를 만나보세요.</div>
@@ -54,15 +54,15 @@ export default function DashboardProjects() {
                         filter: "brightness(0.3)",
                       }}
                     />
-                    <h5 className={`relative z-10 mb-2 font-bold text-white`}>{p.title}</h5>
-                    <p className={`relative z-10 text-xl font-bold text-white`}>{p.desc}</p>
+                    <h5 className="relative z-10 mb-2 font-bold text-white">{p.title}</h5>
+                    <p className="relative z-10 text-xl font-bold text-white">{p.desc}</p>
                   </MotionCard>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
         </Carousel>
       </motion.div>
 

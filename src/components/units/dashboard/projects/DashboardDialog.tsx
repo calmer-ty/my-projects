@@ -26,7 +26,7 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
             </DialogHeader>
 
             {/* 내용 */}
-            <div className="flex flex-col break-keep overflow-scroll max-h-100">
+            <div className="flex flex-col break-keep overflow-y-auto max-h-100">
               {/* 프로젝트 개요 */}
               <Card>
                 <CardHeader>
