@@ -40,7 +40,7 @@ export default function DashboardSkills() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <section id="skills" className="px-10 py-40">
+    <section id="skills" className="px-10 py-50">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
