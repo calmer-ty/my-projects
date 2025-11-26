@@ -15,21 +15,13 @@ export default function LayoutHeader() {
     >
       <h1 className="text-lg font-extrabold">TaeYeon.</h1>
       <div className="flex gap-4">
-        <Button variant="link" className="transition-colors duration-300 cursor-pointer hover:text-purple-600" onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}>
+        <Button variant="link" className="transition-colors duration-300 hover:text-purple-600" onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}>
           Home
         </Button>
-        <Button
-          variant="link"
-          className="transition-colors duration-300 cursor-pointer hover:text-purple-600"
-          onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}
-        >
+        <Button variant="link" className="transition-colors duration-300 hover:text-purple-600" onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}>
           Skills
         </Button>
-        <Button
-          variant="link"
-          className="transition-colors duration-300 cursor-pointer hover:text-purple-600"
-          onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-        >
+        <Button variant="link" className="transition-colors duration-300 hover:text-purple-600" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
           Projects
         </Button>
       </div>

@@ -147,3 +147,7 @@ html {
   /* scroll-snap-type: y mandatory;
   scrollbar-width: none; */
 }
+
+button {
+  cursor: pointer;
+}

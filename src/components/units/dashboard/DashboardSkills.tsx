@@ -66,7 +66,7 @@ export default function DashboardSkills() {
                   color: "#FFF",
                 }}
                 onClick={() => setSelectedTab(item)}
-                className="relative px-4 py-2 rounded-full font-medium text-gray-700 text-center cursor-pointer"
+                className="relative px-4 py-2 rounded-full font-medium text-gray-700 text-center"
               >
                 <i className="inline-block align-middle mr-0 md:mr-2">{item.icon}</i>
                 <span className="hidden md:inline-block">{item.label}</span>

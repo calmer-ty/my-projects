@@ -32,7 +32,7 @@ export default function DashboardHero() {
         </motion.p>
         <p className="mb-12 text-lg sm:text-xl text-gray-200 break-keep">사용자가 필요한 서비스를 고민하고 실현해 나갑니다.</p>
         <div className="flex gap-4">
-          <Button className="cursor-pointer" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
+          <Button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
             <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             <span>프로젝트 보기</span>
           </Button>
