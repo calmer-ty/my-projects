@@ -5,6 +5,8 @@ export const projects = [
     desc: "나만의 여행 기록을 남기세요.",
     content: "Item 1 상세 내용",
     bgSrc: "travel-diary.jpg",
+    source: "Image by Freepik",
+    sourceUrl: "https://www.freepik.com/free-photo/woman-hand-with-hat-against-sky_4495967.htm#fromView=keyword&page=1&position=5&uuid=700cd5f2-ed87-4250-8d97-28698156c7c2&query=Sunny+travel+day",
   },
   {
     id: "project-02",
@@ -12,6 +14,9 @@ export const projects = [
     desc: "빈티지 상품, 이제 한 곳에서 관리하세요.",
     content: "Item 2 상세 내용",
     bgSrc: "vintage-management.jpg",
+    source: "Image by Freepik",
+    sourceUrl:
+      "https://kr.freepik.com/free-photo/spring-wardrobe-switch-high-angle_39701011.htm#fromView=keyword&page=1&position=0&uuid=ca36e39c-f635-41e2-bd5b-89a69185abab&query=%EB%B9%88%ED%8B%B0%EC%A7%80+%EC%9D%98%EB%A5%98+%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4",
   },
   {
     id: "project-03",
@@ -19,6 +24,8 @@ export const projects = [
     desc: "원하는 매물을 한눈에 확인하세요.",
     content: "Item 3 상세 내용",
     bgSrc: "real-estate.jpg",
+    source: "Image by Freepik",
+    sourceUrl: "https://kr.freepik.com/free-photo/man-looking-high-skyscrapers_4800868.htm",
   },
   {
     id: "project-04",
@@ -26,6 +33,9 @@ export const projects = [
     desc: "다양한 상품을 구경해보세요.",
     content: "Item 4 상세 내용",
     bgSrc: "used-market.jpg",
+    source: "Image by Freepik",
+    sourceUrl:
+      "https://kr.freepik.com/free-ai-image/scene-with-miscellaneous-items-being-sold-yard-sale-bargains_138697331.htm#fromView=keyword&page=1&position=39&uuid=48fd8ae7-d1ee-4f67-b4f5-17becd05a731&query=%ED%8B%B0%EC%85%94%EC%B8%A0+%ED%8C%90%EB%A7%A4+%EC%8B%9C%EC%9E%A5",
   },
   {
     id: "project-05",
@@ -33,6 +43,9 @@ export const projects = [
     desc: "자신의 생각을 공유해보세요.",
     content: "Item 5 상세 내용",
     bgSrc: "free-board.jpg",
+    source: "Image by Freepik",
+    sourceUrl:
+      "https://kr.freepik.com/free-photo/working-from-home-time-management-concept_17239290.htm#fromView=keyword&page=1&position=1&uuid=4015e440-ea39-42af-b471-1b9c8c254550&query=%EB%B2%BD%EC%A7%80%EB%A5%BC+%EB%B6%99%EC%9D%B4%EB%8A%94+%EB%B0%A9%EB%B2%95",
   },
 ];
 

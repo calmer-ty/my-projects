@@ -45,14 +45,27 @@ export default function DashboardProjects() {
                       transition: { type: "spring", stiffness: 300 },
                     }}
                   >
-                    <motion.img
-                      className="absolute inset-0 w-full h-full brightness-50 object-cover"
-                      src={`/images/${p.bgSrc}`}
-                      alt="freepik"
-                      whileHover={{
-                        filter: "brightness(0.3)",
-                      }}
-                    />
+                    <figure>
+                      <motion.img
+                        className="absolute inset-0 w-full h-full brightness-50 object-cover"
+                        src={`/images/${p.bgSrc}`}
+                        alt="freepik"
+                        whileHover={{
+                          filter: "brightness(0.3)",
+                        }}
+                      />
+                      <figcaption className="absolute right-2 bottom-2">
+                        <a
+                          href={p.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-2 py-1 text-xs text-white/70 bg-black/20 rounded-md backdrop-blur-sm
+                          transition-colors hover:bg-black/30 hover:text-white"
+                        >
+                          {p.source}
+                        </a>
+                      </figcaption>
+                    </figure>
                     <h5 className="relative z-10 mb-2 font-bold text-white">{p.title}</h5>
                     <p className="relative z-10 text-xl font-bold text-white">{p.desc}</p>
                   </MotionCard>
