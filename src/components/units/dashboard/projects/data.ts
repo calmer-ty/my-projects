@@ -4,7 +4,7 @@ export const projects = [
     title: "Travel",
     desc: "나만의 여행 기록을 남기세요.",
     content: "Item 1 상세 내용",
-    bgSrc: "travel-diary.jpg",
+    bgSrc: "images/travel-diary.jpg",
     source: "Image by Freepik",
     sourceUrl: "https://www.freepik.com/free-photo/woman-hand-with-hat-against-sky_4495967.htm#fromView=keyword&page=1&position=5&uuid=700cd5f2-ed87-4250-8d97-28698156c7c2&query=Sunny+travel+day",
   },
@@ -13,7 +13,7 @@ export const projects = [
     title: "Vintage",
     desc: "빈티지 상품, 이제 한 곳에서 관리하세요.",
     content: "Item 2 상세 내용",
-    bgSrc: "vintage-management.jpg",
+    bgSrc: "images/vintage-management.jpg",
     source: "Image by Freepik",
     sourceUrl:
       "https://kr.freepik.com/free-photo/spring-wardrobe-switch-high-angle_39701011.htm#fromView=keyword&page=1&position=0&uuid=ca36e39c-f635-41e2-bd5b-89a69185abab&query=%EB%B9%88%ED%8B%B0%EC%A7%80+%EC%9D%98%EB%A5%98+%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4",
@@ -23,7 +23,7 @@ export const projects = [
     title: "Real Estate",
     desc: "원하는 매물을 한눈에 확인하세요.",
     content: "Item 3 상세 내용",
-    bgSrc: "real-estate.jpg",
+    bgSrc: "images/real-estate.jpg",
     source: "Image by Freepik",
     sourceUrl: "https://kr.freepik.com/free-photo/man-looking-high-skyscrapers_4800868.htm",
   },
@@ -32,7 +32,7 @@ export const projects = [
     title: "Market",
     desc: "다양한 상품을 구경해보세요.",
     content: "Item 4 상세 내용",
-    bgSrc: "used-market.jpg",
+    bgSrc: "images/used-market.jpg",
     source: "Image by Freepik",
     sourceUrl:
       "https://kr.freepik.com/free-ai-image/scene-with-miscellaneous-items-being-sold-yard-sale-bargains_138697331.htm#fromView=keyword&page=1&position=39&uuid=48fd8ae7-d1ee-4f67-b4f5-17becd05a731&query=%ED%8B%B0%EC%85%94%EC%B8%A0+%ED%8C%90%EB%A7%A4+%EC%8B%9C%EC%9E%A5",
@@ -42,7 +42,7 @@ export const projects = [
     title: "Board",
     desc: "자신의 생각을 공유해보세요.",
     content: "Item 5 상세 내용",
-    bgSrc: "free-board.jpg",
+    bgSrc: "images/free-board.jpg",
     source: "Image by Freepik",
     sourceUrl:
       "https://kr.freepik.com/free-photo/working-from-home-time-management-concept_17239290.htm#fromView=keyword&page=1&position=1&uuid=4015e440-ea39-42af-b471-1b9c8c254550&query=%EB%B2%BD%EC%A7%80%EB%A5%BC+%EB%B6%99%EC%9D%B4%EB%8A%94+%EB%B0%A9%EB%B2%95",
@@ -100,8 +100,13 @@ export const projectsData = [
 
     features: [
       {
-        title: "외국 통화 데이터를 원화로 환산",
-        core: ["사용한 통화 데이터와 원화로 환산한 데이터를 객체로 저장합니다."],
+        title: "외국 통화 데이터 시각화",
+        core: [
+          "사용자가 선택한 외국 통화 금액 입력 → 외부 환율 API 호출 → 원화 환산 후 외국 통화/원화 값 Firestore에 저장",
+          "저장된 외국 통화/원화 데이터를 표 컴포넌트에서 시각화",
+          "등급제에 따라 외국 통화 입력 기능 접근을 제한",
+          "데이터는 대시보드에 활용",
+        ],
         difficult: {
           problem: "변동하는 통화 데이터와 원화로 환산해 저장할 때, 데이터 필드 구조가 복잡해 활용이 어려워 저장 로직을 자주 수정해야 했습니다.",
           solve: "사용 통화와 환산 금액 데이터를 함께 하나의 필드에 저장하는 방법을 AI 도구를 참고해 확인했습니다.",
@@ -109,14 +114,32 @@ export const projectsData = [
         retrospect: "프로젝트에서 필요한 데이터와 그 구조를 미리 설계하고 활용 방안을 고민하는 것이 중요하다는 점을 배웠습니다.",
       },
       {
-        title: "입고 & 판매 관리 데이터 연동",
-        core: ["입고 관리 데이터에서 판매에 필요한 데이터만 필터링하여 판매 관리 데이터에 저장합니다."],
+        title: "매입 관리 시스템",
+        core: [
+          "상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장",
+          "입력한 상품 데이터를 패키지 단위로 그룹화하여 저장 및 관리",
+          "판매 등록 시 패키지 데이터를 일부 추출하여 판매 데이터로 전송 및 활용",
+        ],
         difficult: {
-          problem: "입고와 판매 기능을 따로 개발한 상태에서, 두 기능을 통합하는 과정에서 여러 번 수정이 필요했습니다.",
+          problem: "매입 & 판매 기능을 따로 개발한 상태에서, 두 기능을 통합하는 과정에서 여러 번 수정이 필요했습니다.",
           solve: "별도 브랜치에서 통합 구현이 가능한지 확인하고, 연동 가능하다는 판단 후 두 기능을 성공적으로 통합했습니다.",
         },
         retrospect:
-          "처음에는 입고 & 판매 기능이 각각 필요하다고 생각했습니다. 하지만 직접 사용해보면서 두 기능이 유기적으로 연결될 때 서비스가 훨씬 편리해진다는 점을 깨달았습니다. 이를 통해 사용자의 실제 이용 흐름을 고려한 기능 설계의 중요성을 느꼈습니다.",
+          "처음에는 매입 & 판매 기능이 각각 필요하다고 생각했습니다. 하지만 직접 사용해보면서 두 기능이 유기적으로 연결될 때 서비스가 훨씬 편리해진다는 점을 깨달았습니다. 이를 통해 사용자의 실제 이용 흐름을 고려한 기능 설계의 중요성을 느꼈습니다.",
+      },
+      {
+        title: "판매 관리 시스템",
+        core: [
+          "매입 관리 Firestore에 저장된 상품 데이터를 추출 → 판매 데이터 형식으로 변환 후 저장",
+          "판매가 및 부가 비용 입력 → 순이익 계산 후 Firestore에 저장 → 대시보드 차트로 시각화",
+          "판매 상태 변경 시 Firestore 업데이트 → 대시보드 반영",
+        ],
+        // difficult: {
+        //   problem: "매입과 판매 기능을 따로 개발한 상태에서, 두 기능을 통합하는 과정에서 여러 번 수정이 필요했습니다.",
+        //   solve: "별도 브랜치에서 통합 구현이 가능한지 확인하고, 연동 가능하다는 판단 후 두 기능을 성공적으로 통합했습니다.",
+        // },
+        // retrospect:
+        //   "처음에는 매입 & 판매 기능이 각각 필요하다고 생각했습니다. 하지만 직접 사용해보면서 두 기능이 유기적으로 연결될 때 서비스가 훨씬 편리해진다는 점을 깨달았습니다. 이를 통해 사용자의 실제 이용 흐름을 고려한 기능 설계의 중요성을 느꼈습니다.",
       },
     ],
   },

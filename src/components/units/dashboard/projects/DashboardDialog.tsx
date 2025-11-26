@@ -90,24 +90,28 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
                       </ul>
                     </li>
 
-                    <li>
-                      <h4 className="mb-2 text-md font-semibold text-gray-700">어려웠던 점</h4>
-                      <ul className="space-y-2">
-                        <li className="flex gap-1 text-sm text-gray-600">
-                          <span className="shrink-0">• 문제:</span>
-                          {feature.difficult.problem}
-                        </li>
-                        <li className="flex gap-1 text-sm text-gray-600">
-                          <span className="shrink-0">• 해결:</span>
-                          {feature.difficult.solve}
-                        </li>
-                      </ul>
-                    </li>
+                    {feature.difficult && (
+                      <li>
+                        <h4 className="mb-2 text-md font-semibold text-gray-700">어려웠던 점</h4>
+                        <ul className="space-y-2">
+                          <li className="flex gap-1 text-sm text-gray-600">
+                            <span className="shrink-0">• 문제:</span>
+                            {feature.difficult.problem}
+                          </li>
+                          <li className="flex gap-1 text-sm text-gray-600">
+                            <span className="shrink-0">• 해결:</span>
+                            {feature.difficult.solve}
+                          </li>
+                        </ul>
+                      </li>
+                    )}
 
-                    <li>
-                      <h4 className="mb-2 text-md font-semibold text-gray-700">회고</h4>
-                      <p className="text-sm text-gray-600">• {feature.retrospect}</p>
-                    </li>
+                    {feature.retrospect && (
+                      <li>
+                        <h4 className="mb-2 text-md font-semibold text-gray-700">회고</h4>
+                        <p className="text-sm text-gray-600 leading-6">• {feature.retrospect}</p>
+                      </li>
+                    )}
                   </ul>
                 </div>
               ))}

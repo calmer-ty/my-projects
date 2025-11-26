@@ -34,8 +34,8 @@ export default function DashboardProjects() {
                 <div className="h-full pt-4">
                   <MotionCard
                     onClick={() => setSelectedId(p.id)}
-                    className="relative overflow-hidden size-full p-6 rounded-xl cursor-pointer"
-                    // 부모 속성 값에 따라 효과 적용
+                    className={`relative overflow-hidden size-full px-6 rounded-xl bg-cover bg-center cursor-pointer`}
+                    style={{ backgroundImage: `url(${p.bgSrc})` }}
                     variants={{
                       hidden: { opacity: 0, y: 30 },
                       visible: { opacity: 1, y: 0 },
@@ -45,36 +45,27 @@ export default function DashboardProjects() {
                       transition: { type: "spring", stiffness: 300 },
                     }}
                   >
-                    <figure>
-                      <motion.img
-                        className="absolute inset-0 w-full h-full brightness-50 object-cover"
-                        src={`/images/${p.bgSrc}`}
-                        alt="freepik"
-                        whileHover={{
-                          filter: "brightness(0.3)",
-                        }}
-                      />
-                      <figcaption className="absolute right-2 bottom-2">
-                        <a
-                          href={p.sourceUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-2 py-1 text-xs text-white/70 bg-black/20 rounded-md backdrop-blur-sm
-                          transition-colors hover:bg-black/30 hover:text-white"
-                        >
-                          {p.source}
-                        </a>
-                      </figcaption>
-                    </figure>
+                    {/* 어둡게 만드는 overlay */}
+                    <div className="absolute inset-0 bg-black/50"></div>
+
                     <h5 className="relative z-10 mb-2 font-bold text-white">{p.title}</h5>
                     <p className="relative z-10 text-xl font-bold text-white">{p.desc}</p>
+                    <a
+                      href={p.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute right-2 bottom-2 px-2 py-1 text-xs text-white/70 bg-black/20 rounded-md backdrop-blur-sm
+                          transition-colors hover:bg-black/30 hover:text-white"
+                    >
+                      {p.source}
+                    </a>
                   </MotionCard>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex" />
-          <CarouselNext className="hidden sm:flex" />
+          <CarouselPrevious className="hidden sm:flex cursor-pointer" />
+          <CarouselNext className="hidden sm:flex cursor-pointer" />
         </Carousel>
       </motion.div>
 
