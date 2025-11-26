@@ -19,8 +19,8 @@ export default function DashboardProjects() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex flex-col h-full px-10 sm:px-20 pt-12 pb-20"
       >
         {/* 상단 제목 */}
@@ -52,6 +52,7 @@ export default function DashboardProjects() {
                     <p className="relative z-10 text-xl font-bold text-white">{p.desc}</p>
                     <a
                       href={p.sourceUrl}
+                      onClick={(e) => e.stopPropagation()} // ★ 이벤트 전파 차단
                       target="_blank"
                       rel="noopener noreferrer"
                       className="absolute right-2 bottom-2 px-2 py-1 text-xs text-white/70 bg-black/20 rounded-md backdrop-blur-sm

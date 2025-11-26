@@ -1,25 +1,6 @@
-import { Transition, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { SiFirebase, SiNextdotjs, SiReact, SiTailwindcss } from "react-icons/si";
-
-export default function Reordering() {
-  const [order, setOrder] = useState(initialOrder);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setOrder(shuffle(order)), 3000);
-    return () => clearTimeout(timeout);
-  }, [order]);
-
-  return (
-    <ul className="flex flex-wrap gap-4 w-36 mb-12">
-      {order.map((el) => (
-        <motion.li key={el.bgc} layout transition={spring} className="flex justify-center items-center w-16 h-16 rounded-md text-white !text-2xl" style={{ backgroundColor: el.bgc }}>
-          {el.icon}
-        </motion.li>
-      ))}
-    </ul>
-  );
-}
 
 interface InitialOrderType {
   icon: React.ReactNode;
@@ -37,10 +18,31 @@ function shuffle([...array]: InitialOrderType[]) {
   return array.sort(() => Math.random() - 0.5);
 }
 
-/*** ==============   Styles   ================ */
+export default function Reordering() {
+  const [order, setOrder] = useState(initialOrder);
 
-const spring: Transition = {
-  type: "spring",
-  damping: 30,
-  stiffness: 400,
-};
+  useEffect(() => {
+    const timeout = setTimeout(() => setOrder(shuffle(order)), 2000);
+    return () => clearTimeout(timeout);
+  }, [order]);
+
+  return (
+    <>
+      <ul className="flex flex-wrap gap-4 w-36 mb-12">
+        {order.map((el) => (
+          <motion.li
+            key={el.bgc}
+            layout
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", damping: 30, stiffness: 400, delay: 0.3 }}
+            className="flex justify-center items-center w-16 h-16 rounded-md text-white !text-2xl origin-left"
+            style={{ backgroundColor: el.bgc }}
+          >
+            {el.icon}
+          </motion.li>
+        ))}
+      </ul>
+    </>
+  );
+}

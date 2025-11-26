@@ -44,8 +44,8 @@ export default function DashboardSkills() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="w-full max-w-180 text-center"
       >
         <h2 className="mb-4 font-medium text-sky-500">기술 스택</h2>
