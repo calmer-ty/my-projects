@@ -15,7 +15,7 @@ export default function DashboardProjects() {
   const MotionCard = motion(Card);
 
   return (
-    <section id="projects" className="w-full h-screen pt-16">
+    <section id="projects" className="h-screen pt-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function DashboardProjects() {
         className="flex flex-col h-full px-10 sm:px-20 pt-12 pb-20"
       >
         {/* 상단 제목 */}
-        <div className="w-full py-6 font-bold text-2xl">아이디어를 실현하고 협업한 다양한 프로젝트를 만나보세요.</div>
+        <div className="py-6 font-bold text-2xl">아이디어를 실현하고 협업한 다양한 프로젝트를 만나보세요.</div>
 
         {/* 케로셀 */}
         <Carousel className="h-full -mx-2">

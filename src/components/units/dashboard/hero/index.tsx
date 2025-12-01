@@ -7,7 +7,8 @@ import Reordering from "./Reordering";
 
 export default function DashboardHero() {
   return (
-    <section id="hero" className="overflow-hidden w-full h-screen relative py-24 bg-[url('/images/main.jpg')] bg-cover bg-center">
+    <section id="hero" className="relative pt-16 bg-[url('/images/main.jpg')] bg-cover bg-center">
+      {/* 출처 표시 */}
       <a
         href="https://kr.freepik.com/free-vector/flat-design-polygonal-background_13264357.htm#fromView=image_search_similar&page=4&position=28&uuid=b5916a80-f115-47b1-9669-4810bd32f0d7&query=EA%B0%9C%EB%B0%9C+%EB%B0%B0%EA%B2%BD"
         target="_blank"
@@ -22,7 +23,7 @@ export default function DashboardHero() {
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.05 }} // 마우스 올리면 살짝 확대
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col items-center size-full px-10 py-36 text-white"
+        className="flex flex-col items-center py-40 text-white"
       >
         <Reordering />
         <p className="mb-6 text-xl sm:text-2xl">안녕하세요!</p>

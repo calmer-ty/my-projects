@@ -4,7 +4,7 @@ import DashboardSkills from "./DashboardSkills";
 
 export default function DashboardUI() {
   return (
-    <article className="flex flex-col items-center">
+    <article className="">
       <DashboardHero />
       <DashboardSkills />
       <DashboardProjects />

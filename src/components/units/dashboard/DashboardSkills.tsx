@@ -46,7 +46,7 @@ export default function DashboardSkills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="w-full max-w-180 text-center"
+        className="max-w-180 mx-auto text-center"
       >
         <h2 className="mb-4 font-medium text-sky-500">기술 스택</h2>
         <p className="mb-8 text-2xl font-bold">사용할 수 있는 기술과 선택 이유</p>
