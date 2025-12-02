@@ -1,10 +1,10 @@
 import DashboardHero from "./hero";
 import DashboardProjects from "./projects";
-import DashboardSkills from "./DashboardSkills";
+import DashboardSkills from "./skills";
 
 export default function DashboardUI() {
   return (
-    <article className="">
+    <article>
       <DashboardHero />
       <DashboardSkills />
       <DashboardProjects />
