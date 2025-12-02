@@ -7,7 +7,7 @@ import Reordering from "./Reordering";
 
 export default function DashboardHero() {
   return (
-    <section id="hero" className="relative pt-16 bg-[url('/images/main.jpg')] bg-cover bg-center">
+    <section id="hero" className="overflow-hidden relative pt-16 bg-[url('/images/main.jpg')] bg-cover bg-center">
       {/* 출처 표시 */}
       <a
         href="https://kr.freepik.com/free-vector/flat-design-polygonal-background_13264357.htm#fromView=image_search_similar&page=4&position=28&uuid=b5916a80-f115-47b1-9669-4810bd32f0d7&query=EA%B0%9C%EB%B0%9C+%EB%B0%B0%EA%B2%BD"

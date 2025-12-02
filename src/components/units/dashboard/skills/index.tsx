@@ -9,13 +9,13 @@ export default function DashboardSkills() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <section id="skills" className="px-10 py-50">
+    <section id="skills" className="py-30">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-180 mx-auto"
+        className="max-w-220 mx-auto"
       >
         {/* title */}
         <div className="text-center">
