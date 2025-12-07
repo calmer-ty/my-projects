@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-import DashboardDialog from "./DashboardDialog";
+import ProjectsDialog from "./dialog";
 
 import { projects } from "./data";
 import "./styles.css";
@@ -70,7 +70,7 @@ export default function DashboardProjects() {
         </Carousel>
       </motion.div>
 
-      <DashboardDialog selectedId={selectedId} setSelectedId={setSelectedId} />
+      <ProjectsDialog selectedId={selectedId} setSelectedId={setSelectedId} />
     </section>
   );
 }

@@ -2,14 +2,16 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
 
-import { skillIcons } from "@/commons/skillIcons";
-import { projectsData } from "./data";
+import Feature from "./feature";
 
-interface IDashboardDialogProps {
+import { skillIcons } from "@/commons/skillIcons";
+import { projectsData } from "../data";
+
+interface IProjectsDialogProps {
   selectedId: string | null;
   setSelectedId: React.Dispatch<React.SetStateAction<string | null>>;
 }
-export default function DashboardDialog({ selectedId, setSelectedId }: IDashboardDialogProps) {
+export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsDialogProps) {
   const selectedProject = projectsData.find((p) => p.id === selectedId);
 
   return (
@@ -40,7 +42,7 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
                     </p>
                     <p className="flex items-center gap-2">
                       <FaUser />
-                      {selectedProject.team}
+                      {selectedProject.projectType}
                     </p>
                   </div>
                   {/* 사용 기술 */}
@@ -76,45 +78,16 @@ export default function DashboardDialog({ selectedId, setSelectedId }: IDashboar
               </Card>
 
               {/* 기능 */}
-              {selectedProject.features.map((feature, idx) => (
-                <div key={`${feature.title}_${idx}`} className="px-4 py-8 border-b border-gray-200 last:border-0">
-                  <h3 className="mb-4 font-bold text-lg">{feature.title}</h3>
-
-                  <ul className="ml-2 space-y-6">
-                    <li>
-                      <h4 className="mb-2 text-md font-semibold text-gray-700">{selectedProject.team === "개인 프로젝트" ? "핵심" : "담당"} 기능</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        {feature.core.map((item, index) => (
-                          <li key={index}>• {item}</li>
-                        ))}
-                      </ul>
-                    </li>
-
-                    {feature.difficult && (
-                      <li>
-                        <h4 className="mb-2 text-md font-semibold text-gray-700">어려웠던 점</h4>
-                        <ul className="space-y-2">
-                          <li className="flex gap-1 text-sm text-gray-600">
-                            <span className="shrink-0">• 문제:</span>
-                            {feature.difficult.problem}
-                          </li>
-                          <li className="flex gap-1 text-sm text-gray-600">
-                            <span className="shrink-0">• 해결:</span>
-                            {feature.difficult.solve}
-                          </li>
-                        </ul>
-                      </li>
-                    )}
-
-                    {feature.retrospect && (
-                      <li>
-                        <h4 className="mb-2 text-md font-semibold text-gray-700">회고</h4>
-                        <p className="text-sm text-gray-600 leading-6">• {feature.retrospect}</p>
-                      </li>
-                    )}
-                  </ul>
-                </div>
-              ))}
+              {selectedProject.features
+                .filter((el) => el.type === "responsible")
+                .map((feature, idx) => (
+                  <Feature key={`${feature.title}_${idx}`} feature={feature} />
+                ))}
+              {selectedProject.features
+                .filter((el) => el.type === "core")
+                .map((feature, idx) => (
+                  <Feature key={`${feature.title}_${idx}`} feature={feature} />
+                ))}
               {/* 향후 계획 */}
               {selectedProject.futurePlans && (
                 <div className="px-4 py-8 border-b border-gray-200 last:border-0">
