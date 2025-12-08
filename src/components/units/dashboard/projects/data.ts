@@ -74,8 +74,8 @@ export const projectsData = [
     features: [
       {
         type: "responsible",
-        title: "Google Maps을 활용한 데이터 시각화 및 관리",
-        tasks: ["사용자가 원하는 장소에 정보를 입력하고 POI(Point of Interest) 데이터를 기반으로 저장합니다.", "생성된 마커를 클릭 시 모달창을 통해 데이터를 수정, 삭제할 수 있습니다."],
+        title: "맵 데이터 시각화 및 관리",
+        tasks: ["사용자가 원하는 장소에 정보를 입력하고 POI(Point of Interest) 데이터를 기반으로 저장", "생성된 마커를 클릭 시 모달창을 통해 데이터를 수정, 삭제 가능"],
         difficult: {
           problem: "기획 과정에서 지도 상 마커 렌더링 대상 데이터 선정이 핵심 과제였습니다.",
           solve: "팀원과 논의하며 마커 사용 방식을 검토했고, 구글 맵 문서의 POI(Point of Interest) 활용 방법을 참고하여 문제를 해결했습니다.",
@@ -85,7 +85,7 @@ export const projectsData = [
       {
         type: "responsible",
         title: "북마크별 기록 정렬",
-        tasks: ["북마크별로 사용자가 지도에서 기록했던 데이터들을 정리하여 렌더링합니다.", "각 북마크 그룹을 열면 그 안에 포함된 데이터를 날짜별로 확인할 수 있습니다."],
+        tasks: ["북마크별로 사용자가 지도에서 기록했던 데이터들을 정리하여 렌더링", "각 북마크 그룹을 열면 그 안에 포함된 데이터를 날짜별로 확인 가능"],
         difficult: {
           problem: "북마크에 해당되는 데이터만 필터링하는 기능을 구현할 때, 어떤 방식으로 접근해야할지 감을 잡지 못했습니다.",
           solve: "지도 관련 플랫폼을 찾아 북마크 기능을 참고하고, AI 도구를 통해 실무에서 북마크 데이터를 어떻게 활용하는지 탐색하여 별도의 데이터 컬렉션을 생성하여 마커 데이터와 매칭했습니다.",
@@ -95,7 +95,7 @@ export const projectsData = [
       {
         type: "core",
         title: "북마크별 데이터 저장",
-        tasks: ["사용자가 북마크를 생성하여 원하는 장소에 메모와 함께 북마크를 설정합니다.", "북마크를 설정하면 추후 여행 기록 리스트에서 확인이 가능합니다."],
+        tasks: ["사용자가 북마크를 생성하여 원하는 장소에 메모와 함께 북마크를 설정", "북마크를 설정하면 추후 여행 기록 리스트에서 확인 가능"],
         difficult: {
           problem:
             "Firestore 데이터를 활용해 지도에 마커를 렌더링하고 북마크 데이터도 저장했습니다. 하지만 메모 수정 시 마커 데이터 북마크 값이 선택한 북마크 상태(state) 값에 의해 덮여쓰이는 문제가 발생했습니다.",
@@ -107,14 +107,7 @@ export const projectsData = [
       {
         type: "core",
         title: "여행 주의 국가 표시",
-        tasks: ["여행 주의령이 내려진 국가들을 시각화합니다.", "주의 단계별로 정렬합니다.", "국가별 자세한 경보 정보를 모달로 확인 가능합니다."],
-        // difficult: {
-        //   problem:
-        //     "Firestore 데이터를 활용해 지도에 마커를 렌더링하고 북마크 데이터도 저장했습니다. 하지만 메모 수정 시 마커 데이터 북마크 값이 선택한 북마크 상태(state) 값에 의해 덮여쓰이는 문제가 발생했습니다.",
-        //   solve:
-        //     "상태 함수와 Firestore 북마크 값을 콘솔로 통해 동작 흐름을 살펴본 결과, 초기에 Firestore 값으로 북마크값이 들어와야하는데 여러 북마크를 누르면서 전에 선택한 상태 값으로 초기화 되고 있다는 점을 확인했습니다. 이후 useEffect를 통해 수정 시에 북마크 상태를 변경해주어 해결했습니다.",
-        // },
-        // retrospect: "Firestore 값으로 상태를 초기화해야 하는 시점을 놓쳤기 때문에 발생한 문제였습니다. 앞으로는 외부 데이터와 로컬 상태의 초기화 흐름을 더 명확히 구분해야겠다는 생각이 들었습니다.",
+        tasks: ["여행 주의령이 내려진 국가 시각화", "여행 주의 단계별로 국가 리스트 정렬", "국가별 리스트 항목 클릭시 모달창으로  세부 정보 제공"],
       },
     ],
     futurePlans: {
@@ -174,12 +167,6 @@ export const projectsData = [
           "판매가 및 부가 비용 입력 → 순이익 계산 후 Firestore에 저장 → 대시보드 차트로 시각화",
           "판매 상태 변경 시 Firestore 업데이트 → 대시보드 반영",
         ],
-        // difficult: {
-        //   problem: "매입과 판매 기능을 따로 개발한 상태에서, 두 기능을 통합하는 과정에서 여러 번 수정이 필요했습니다.",
-        //   solve: "별도 브랜치에서 통합 구현이 가능한지 확인하고, 연동 가능하다는 판단 후 두 기능을 성공적으로 통합했습니다.",
-        // },
-        // retrospect:
-        //   "처음에는 매입 & 판매 기능이 각각 필요하다고 생각했습니다. 하지만 직접 사용해보면서 두 기능이 유기적으로 연결될 때 서비스가 훨씬 편리해진다는 점을 깨달았습니다. 이를 통해 사용자의 실제 이용 흐름을 고려한 기능 설계의 중요성을 느꼈습니다.",
       },
     ],
   },
@@ -190,8 +177,7 @@ export const projectsData = [
     date: "2024.06 ~ 2025.01",
     projectType: "개인 프로젝트",
     url: "https://realestate.calmerproject.store",
-    github: "https://github.com/calmer-ty/frontend-real-estate",
-    // skills: ["React", "Next.js", "Emotion", "Firebase", "Naver Maps", "REST API"],
+    github: "https://github.com/calmer-ty/frontend-realestate",
     skills: [{ icon: "Naver Maps", reason: "국내 지도 서비스로 접근성이 뛰어나 국내 공공데이터를 활용하기 좋기에 Naver Maps를 선택했습니다." }],
 
     features: [
@@ -226,8 +212,7 @@ export const projectsData = [
     projectType: "개인 프로젝트",
     url: "",
     github: "https://github.com/calmer-ty/codecamp-frontend_portfolio",
-    // skills: ["React", "Next.js", "Emotion", "GraphQL", "Kakao Maps"],
-    skills: [{ icon: "Google Maps", reason: "구글 맵 API를 활용한 지도 표시 및 마커 관리 기능 구현" }],
+    // skills: [{ icon: "Naver Maps", reason: "국내 지도 서비스로 접근성이 뛰어나 국내 공공데이터를 활용하기 좋기에 Naver Maps를 선택했습니다." }],
 
     features: [
       {
@@ -250,8 +235,7 @@ export const projectsData = [
     projectType: "개인 프로젝트",
     url: "",
     github: "https://github.com/calmer-ty/codecamp-frontend_portfolio",
-    // skills: ["React", "Next.js", "Emotion", "GraphQL"],
-    skills: [{ icon: "Google Maps", reason: "구글 맵 API를 활용한 지도 표시 및 마커 관리 기능 구현" }],
+    // skills: [{ icon: "Naver Maps", reason: "국내 지도 서비스로 접근성이 뛰어나 국내 공공데이터를 활용하기 좋기에 Naver Maps를 선택했습니다." }],
 
     features: [
       {
