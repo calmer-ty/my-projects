@@ -72,7 +72,7 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                   )}
                   <div className="flex flex-col gap-2 sm:flex-row">
                     <span className="w-18 shrink-0 font-bold">Github</span>
-                    <a href={selectedProject.github} className="text-gray-400 text-sm" target="_blank">
+                    <a href={selectedProject.github} className="text-sm" target="_blank">
                       {selectedProject.github}
                     </a>
                   </div>
@@ -95,8 +95,8 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                 <div className="px-4 py-8 border-b border-gray-200 last:border-0">
                   <h3 className="mb-4 font-bold text-lg">향후 계획</h3>
                   <div className="ml-2 space-y-6">
-                    <h4 className="mb-2 text-md font-semibold text-gray-700">{selectedProject.futurePlans.title}</h4>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <h4 className="mb-2 text-md font-semibold">{selectedProject.futurePlans.title}</h4>
+                    <ul className="space-y-2 text-sm">
                       {selectedProject.futurePlans.contents.map((content, index) => (
                         <li key={index}>• {content}</li>
                       ))}

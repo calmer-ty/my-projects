@@ -34,8 +34,7 @@ export default function DashboardProjects() {
                 <div className="h-full pt-4">
                   <MotionCard
                     onClick={() => setSelectedId(p.id)}
-                    className={`relative overflow-hidden size-full px-6 rounded-xl bg-cover bg-center cursor-pointer`}
-                    style={{ backgroundImage: `url(${p.bgSrc})` }}
+                    className="relative overflow-hidden size-full px-6 rounded-xl bg-cover bg-no-repeat bg-center cursor-pointer"
                     variants={{
                       hidden: { opacity: 0, y: 30 },
                       visible: { opacity: 1, y: 0 },
@@ -45,9 +44,11 @@ export default function DashboardProjects() {
                       transition: { type: "spring", stiffness: 300 },
                     }}
                   >
-                    {/* 어둡게 만드는 overlay */}
-                    <div className="absolute inset-0 bg-black/50"></div>
-
+                    <img
+                      src={p.bgSrc}
+                      className="absolute inset-0 w-full h-full object-cover
+                        brightness-50 dark:brightness-30"
+                    />
                     <h5 className="relative z-10 mb-2 font-bold text-white">{p.title}</h5>
                     <p className="relative z-10 text-xl font-bold text-white">{p.desc}</p>
                     <a
