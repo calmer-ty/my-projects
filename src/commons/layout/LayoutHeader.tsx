@@ -16,6 +16,8 @@ export default function LayoutHeader() {
   const [mount, setMount] = useState(false);
   useEffect(() => setMount(true), []);
 
+  if (!mount) return null;
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -59,13 +61,12 @@ export default function LayoutHeader() {
             <Github className="text-black dark:text-white" />
           </a>
         </Button>
-        {mount && (
-          <ChildrenTooltip content={theme === "dark" ? "라이트 모드로 변경" : "다크 모드로 변경"}>
-            <Button size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-              {theme === "dark" ? <Sun /> : <Moon />}
-            </Button>
-          </ChildrenTooltip>
-        )}
+
+        <ChildrenTooltip content={theme === "dark" ? "라이트 모드로 변경" : "다크 모드로 변경"}>
+          <Button size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {theme === "dark" ? <Sun /> : <Moon />}
+          </Button>
+        </ChildrenTooltip>
       </div>
     </motion.header>
   );
