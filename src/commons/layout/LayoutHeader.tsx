@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
@@ -10,7 +11,10 @@ import ChildrenTooltip from "../ChildrenTooltip";
 
 export default function LayoutHeader() {
   const { theme, setTheme } = useTheme();
-  console.log("theme: ", theme);
+
+  // 마운트 후 동작 컨트롤
+  const [mount, setMount] = useState(false);
+  useEffect(() => setMount(true), []);
 
   return (
     <motion.header
@@ -50,17 +54,11 @@ export default function LayoutHeader() {
         >
           <Github size={24} className="text-gray-800" />
         </motion.a>
-        <ChildrenTooltip content={theme === "dark" ? "라이트 모드로 변경" : "다크 모드로 변경"}>
-          {theme === "dark" ? (
-            <Button onClick={() => setTheme("light")}>
-              <Sun />
-            </Button>
-          ) : (
-            <Button onClick={() => setTheme("dark")}>
-              <Moon />
-            </Button>
-          )}
-        </ChildrenTooltip>
+        {mount && (
+          <ChildrenTooltip content={theme === "dark" ? "라이트 모드로 변경" : "다크 모드로 변경"}>
+            <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>{theme === "dark" ? <Sun /> : <Moon />}</Button>
+          </ChildrenTooltip>
+        )}
       </div>
     </motion.header>
   );
