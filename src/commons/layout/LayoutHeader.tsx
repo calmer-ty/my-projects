@@ -21,17 +21,17 @@ export default function LayoutHeader() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed flex justify-between items-center w-full h-16 px-8 z-10 text-white bg-black/80"
+      className="fixed flex justify-between items-center w-full h-16 px-8 z-10 bg-white dark:bg-black shadow-lg"
     >
       <h1 className="text-lg font-extrabold">TaeYeon.</h1>
       <div className="flex gap-4">
-        <Button variant="link" className="transition-colors duration-300 text-white hover:text-purple-600" onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}>
+        <Button variant="link" className="transition-colors duration-300 hover:text-purple-600" onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}>
           Home
         </Button>
-        <Button variant="link" className="transition-colors duration-300 text-white hover:text-purple-600" onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}>
+        <Button variant="link" className="transition-colors duration-300 hover:text-purple-600" onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}>
           Skills
         </Button>
-        <Button variant="link" className="transition-colors duration-300 text-white hover:text-purple-600" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
+        <Button variant="link" className="transition-colors duration-300 hover:text-purple-600" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
           Projects
         </Button>
       </div>

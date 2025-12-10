@@ -30,7 +30,7 @@ export default function DashboardHero() {
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 1.05 }} // 마우스 올리면 살짝 확대
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-white"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center mt-6 text-white"
         >
           <Reordering />
           <p className="mb-6 text-xl sm:text-2xl">안녕하세요!</p>
