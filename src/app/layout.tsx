@@ -5,6 +5,7 @@ import LayoutHeader from "@/commons/layout/LayoutHeader";
 
 import type { Metadata } from "next";
 import "./globals.css";
+import Wrapper from "@/commons/layout/Wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +31,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <LayoutHeader />
-          <main>{children}</main>
+          <Wrapper>
+            <LayoutHeader />
+            <main>{children}</main>
+          </Wrapper>
         </ThemeProvider>
       </body>
     </html>
