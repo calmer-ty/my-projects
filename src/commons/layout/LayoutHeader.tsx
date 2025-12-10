@@ -37,7 +37,7 @@ export default function LayoutHeader() {
       </div>
 
       <div className="flex items-center gap-4">
-        <motion.a
+        {/* <motion.a
           href="https://github.com/calmer-ty?tab=repositories"
           target="_blank"
           className="flex justify-center items-center w-10 h-10 rounded-full bg-gray-50 transition-colors duration-200 hover:bg-gray-200 shadow-md hover:shadow-lg"
@@ -53,10 +53,17 @@ export default function LayoutHeader() {
           }}
         >
           <Github size={24} className="text-gray-800" />
-        </motion.a>
+        </motion.a> */}
+        <Button asChild variant="outline" size="icon">
+          <a href="https://github.com/calmer-ty?tab=repositories" target="_blank">
+            <Github className="text-black dark:text-white" />
+          </a>
+        </Button>
         {mount && (
           <ChildrenTooltip content={theme === "dark" ? "라이트 모드로 변경" : "다크 모드로 변경"}>
-            <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>{theme === "dark" ? <Sun /> : <Moon />}</Button>
+            <Button size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+              {theme === "dark" ? <Sun /> : <Moon />}
+            </Button>
           </ChildrenTooltip>
         )}
       </div>
