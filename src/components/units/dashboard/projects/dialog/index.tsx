@@ -16,10 +16,7 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
 
   return (
     <Dialog open={!!selectedId} onOpenChange={() => setSelectedId(null)}>
-      <DialogContent
-        className="px-6 sm:px-10 py-10 max-w-100
-          sm:max-w-130 md:max-w-170 lg:max-w-240 sm:h-150"
-      >
+      <DialogContent className="overflow-y-auto lg:max-w-4xl max-h-140 px-6 sm:px-10 py-10">
         {selectedProject && (
           <>
             <DialogHeader>
@@ -28,7 +25,7 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
             </DialogHeader>
 
             {/* 내용 */}
-            <div className="flex flex-col break-keep overflow-y-auto max-h-100">
+            <div className="flex flex-col break-keep">
               {/* 프로젝트 개요 */}
               <Card>
                 <CardHeader>
