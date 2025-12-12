@@ -17,7 +17,7 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
   return (
     <Dialog open={!!selectedId} onOpenChange={() => setSelectedId(null)}>
       <DialogContent
-        className="p-10 max-w-100
+        className="px-6 sm:px-10 py-10 max-w-100
           sm:max-w-130 md:max-w-170 lg:max-w-240 sm:h-150"
       >
         {selectedProject && (

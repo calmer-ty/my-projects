@@ -1,7 +1,9 @@
+import { JSX } from "react";
+
 export interface IFeature {
   type: string;
   title: string;
-  tasks: string[];
+  tasks: JSX.Element[];
   difficult?: {
     problem: string;
     solve: string;
@@ -75,7 +77,12 @@ export const projectsData = [
       {
         type: "responsible",
         title: "맵 데이터 시각화 및 관리",
-        tasks: ["사용자가 원하는 장소에 정보를 입력하고 POI(Point of Interest) 데이터를 기반으로 저장", "생성된 마커를 클릭 시 모달창을 통해 데이터를 수정, 삭제 가능"],
+        tasks: [
+          <span key="01">
+            사용자가 원하는 장소에 정보를 입력하고 <strong className="text-red-500">POI(Point of Interest)</strong> 데이터를 기반으로 저장
+          </span>,
+          <span key="02">생성된 마커를 클릭 시 모달창을 통해 데이터를 수정, 삭제 가능</span>,
+        ],
         difficult: {
           problem: "기획 과정에서 지도 상 마커 렌더링 대상 데이터 선정이 핵심 과제였습니다.",
           solve: "팀원과 논의하며 마커 사용 방식을 검토했고, 구글 맵 문서의 POI(Point of Interest) 활용 방법을 참고하여 문제를 해결했습니다.",
@@ -85,7 +92,14 @@ export const projectsData = [
       {
         type: "responsible",
         title: "북마크별 기록 정렬",
-        tasks: ["북마크별로 사용자가 지도에서 기록했던 데이터들을 정리하여 렌더링", "각 북마크 그룹을 열면 그 안에 포함된 데이터를 날짜별로 확인 가능"],
+        tasks: [
+          <span key="01">
+            사용자가 지도에서 기록했던 데이터들을 <strong className="text-red-500">북마크별</strong>로 정리하여 렌더링
+          </span>,
+          <span key="02">
+            각 북마크 그룹을 열면 그 안에 포함된 데이터를 <strong className="text-red-500">날짜별</strong>로 확인 가능
+          </span>,
+        ],
         difficult: {
           problem: "북마크에 해당되는 데이터만 필터링하는 기능을 구현할 때, 어떤 방식으로 접근해야할지 감을 잡지 못했습니다.",
           solve: "지도 관련 플랫폼을 찾아 북마크 기능을 참고하고, AI 도구를 통해 실무에서 북마크 데이터를 어떻게 활용하는지 탐색하여 별도의 데이터 컬렉션을 생성하여 마커 데이터와 매칭했습니다.",
@@ -95,7 +109,7 @@ export const projectsData = [
       {
         type: "core",
         title: "북마크별 데이터 저장",
-        tasks: ["사용자가 북마크를 생성하여 원하는 장소에 메모와 함께 북마크를 설정", "북마크를 설정하면 추후 여행 기록 리스트에서 확인 가능"],
+        tasks: [<span key="01">사용자가 북마크를 생성하여 원하는 장소에 메모와 함께 북마크를 설정</span>, <span key="02">북마크를 설정하면 추후 여행 기록 리스트에서 확인 가능</span>],
         difficult: {
           problem:
             "Firestore 데이터를 활용해 지도에 마커를 렌더링하고 북마크 데이터도 저장했습니다. 하지만 메모 수정 시 마커 데이터 북마크 값이 선택한 북마크 상태(state) 값에 의해 덮여쓰이는 문제가 발생했습니다.",
@@ -107,7 +121,14 @@ export const projectsData = [
       {
         type: "core",
         title: "여행 주의 국가 표시",
-        tasks: ["여행 주의령이 내려진 국가 시각화", "여행 주의 단계별로 국가 리스트 정렬", "국가별 리스트 항목 클릭시 모달창으로  세부 정보 제공"],
+        tasks: [
+          <span key="01">
+            여행 주의 <strong className="text-red-500">단계별</strong>로 국가 리스트 정렬
+          </span>,
+          <span key="02">
+            국가별 리스트 항목 클릭시 모달창으로 <strong className="text-red-500">세부 정보</strong> 제공
+          </span>,
+        ],
       },
     ],
     futurePlans: {
@@ -132,11 +153,24 @@ export const projectsData = [
       {
         type: "core",
         title: "외국 통화 데이터 시각화",
+        // tasks: [
+        //   "사용자가 선택한 외국 통화 금액 입력 → 외부 환율 API 호출 → 원화 환산 후 외국 통화/원화 값 Firestore에 저장",
+        //   "저장된 외국 통화/원화 데이터를 표 컴포넌트에서 시각화",
+        //   "등급제에 따라 외국 통화 입력 기능 접근을 제한",
+        //   "데이터는 대시보드에 활용",
+        // ],
         tasks: [
-          "사용자가 선택한 외국 통화 금액 입력 → 외부 환율 API 호출 → 원화 환산 후 외국 통화/원화 값 Firestore에 저장",
-          "저장된 외국 통화/원화 데이터를 표 컴포넌트에서 시각화",
-          "등급제에 따라 외국 통화 입력 기능 접근을 제한",
-          "데이터는 대시보드에 활용",
+          <span key="01">
+            사용자가 선택한 외국 통화 금액 입력 → 외부 <strong className="text-red-500">환율 API</strong> 호출 → <strong className="text-red-500">원화 환산</strong> 후 외국 통화/원화 값 Firestore에
+            저장
+          </span>,
+          <span key="02">
+            저장된 외국 통화/원화 데이터를 <strong className="text-red-500">표</strong> 컴포넌트에서 시각화
+          </span>,
+          <span key="03">
+            <strong className="text-red-500">등급</strong>에 따라 외국 통화 입력 기능 <strong className="text-red-500">접근 제한</strong>
+          </span>,
+          <span key="04">데이터는 대시보드에 활용</span>,
         ],
         difficult: {
           problem: "변동하는 통화 데이터와 원화로 환산해 저장할 때, 데이터 필드 구조가 복잡해 활용이 어려워 저장 로직을 자주 수정해야 했습니다.",
@@ -147,10 +181,19 @@ export const projectsData = [
       {
         type: "core",
         title: "매입 관리 시스템",
+        // tasks: [
+        //   "상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장",
+        //   "입력한 상품 데이터를 패키지 단위로 그룹화하여 저장 및 관리",
+        //   "판매 등록 시 패키지 데이터를 일부 추출하여 판매 데이터로 전송 및 활용",
+        // ],
         tasks: [
-          "상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장",
-          "입력한 상품 데이터를 패키지 단위로 그룹화하여 저장 및 관리",
-          "판매 등록 시 패키지 데이터를 일부 추출하여 판매 데이터로 전송 및 활용",
+          <span key="01">상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장</span>,
+          <span key="02">
+            입력한 상품 데이터를 패키지 단위로 <strong className="text-red-500">그룹화</strong>하여 저장 및 관리
+          </span>,
+          <span key="02">
+            판매 등록 시 패키지 데이터를 <strong className="text-red-500">일부 추출</strong>하여 판매 데이터로 <strong className="text-red-500">활용</strong>
+          </span>,
         ],
         difficult: {
           problem: "매입 & 판매 기능을 따로 개발한 상태에서, 두 기능을 통합하는 과정에서 여러 번 수정이 필요했습니다.",
@@ -163,9 +206,11 @@ export const projectsData = [
         type: "core",
         title: "판매 관리 시스템",
         tasks: [
-          "매입 관리 Firestore에 저장된 상품 데이터를 추출 → 판매 데이터 형식으로 변환 후 저장",
-          "판매가 및 부가 비용 입력 → 순이익 계산 후 Firestore에 저장 → 대시보드 차트로 시각화",
-          "판매 상태 변경 시 Firestore 업데이트 → 대시보드 반영",
+          <span key="01">매입 관리 Firestore에 저장된 상품 데이터를 추출 → 판매 데이터 형식으로 변환 후 저장</span>,
+          <span key="02">
+            판매가 및 부가 비용 입력 → 순이익 계산 후 Firestore에 저장 → <strong className="text-red-500">대시보드 차트</strong>로 시각화
+          </span>,
+          <span key="03">판매 상태 변경 시 Firestore 업데이트 → 대시보드에 데이터 반영</span>,
         ],
       },
     ],
@@ -184,7 +229,17 @@ export const projectsData = [
       {
         type: "core",
         title: "지도 기반 매물 시각화",
-        tasks: ["실거래가 데이터를 기반으로 지도에 매물 정보를 마커로 표시합니다.", "마커 클러스터링으로 근방 마커들을 최적화합니다.", "사용자가 선택한 지역의 데이터만을 제공하여 최적화합니다."],
+        tasks: [
+          <span key="01">
+            <strong className="text-red-500">실거래가 데이터</strong>를 기반으로 지도에 매물 정보를 마커로 표시
+          </span>,
+          <span key="02">
+            <strong className="text-red-500">마커 클러스터링</strong>으로 근방 마커들을 최적화
+          </span>,
+          <span key="03">
+            드롭다운 메뉴로 사용자가 <strong className="text-red-500">선택한 지역</strong>의 데이터만 조회하여 최적화
+          </span>,
+        ],
         difficult: {
           problem: "한 번에 모든 데이터를 가져와 마커가 많아지면서 렉 발생했습니다.",
           solve: "사용자가 선택한 지역만 로드하고 마커 클러스터링을 사용하여 최적화했습니다. → 로딩 속도 약 1분 → 약 4초로 단축.",
@@ -194,7 +249,11 @@ export const projectsData = [
       {
         type: "core",
         title: "건물 유형 분류 및 API 활용",
-        tasks: ["건물 유형마다 데이터를 호출하여 마커들을 분리했습니다."],
+        tasks: [
+          <span key="01">
+            <strong className="text-red-500">선택한 건물 유형</strong> 데이터만 조회하여 마커 렌더링
+          </span>,
+        ],
         difficult: {
           problem: "처음에 아파트 데이터만을 기준으로 작업하여, 이후 빌라나 오피스텔 데이터를 추가할 때 코드의 일관성을 유지하는 것이 어려웠습니다.",
           solve: "REST API의 데이터 구조를 분석하여 공통된 타입을 정의하고, 엔드포인트를 분기 처리하여 프로젝트의 확장성을 확보했습니다.",
@@ -212,13 +271,12 @@ export const projectsData = [
     projectType: "개인 프로젝트",
     url: "",
     github: "https://github.com/calmer-ty/codecamp-frontend_portfolio",
-    // skills: [{ icon: "Naver Maps", reason: "국내 지도 서비스로 접근성이 뛰어나 국내 공공데이터를 활용하기 좋기에 Naver Maps를 선택했습니다." }],
 
     features: [
       {
         type: "core",
         title: "카카오 맵",
-        tasks: ["위/경도 값을 받아와 표시하거나, 사용자가 지도 안에 지역을 선택하면 주소 값과 위/경도를 표시할 수 있습니다."],
+        tasks: [<span key="01">위/경도 값을 받아와 표시하거나, 사용자가 지도 안에 지역을 선택하면 주소 값과 위/경도를 표시</span>],
         difficult: {
           problem: "페이지가 렌더링되기 전에 지도 관련 코드가 실행되어, 지도 컨테이너가 존재하지 않아 오류 발생.",
           solve: "useEffect을 활용하여 지도가 마운트된 후 적절한 시점에 데이터 요청하도록 수정.",
@@ -235,18 +293,17 @@ export const projectsData = [
     projectType: "개인 프로젝트",
     url: "",
     github: "https://github.com/calmer-ty/codecamp-frontend_portfolio",
-    // skills: [{ icon: "Naver Maps", reason: "국내 지도 서비스로 접근성이 뛰어나 국내 공공데이터를 활용하기 좋기에 Naver Maps를 선택했습니다." }],
 
     features: [
       {
         type: "core",
         title: "카카오 맵",
-        tasks: ["위/경도 값을 받아와 표시하거나, 사용자가 지도 안에 지역을 선택하면 주소 값과 위/경도를 표시할 수 있습니다."],
+        tasks: [<span key="01">특정 텍스트를 검색하여 원하는 게시글을 찾기</span>],
         difficult: {
-          problem: "페이지가 렌더링되기 전에 지도 관련 코드가 실행되어, 지도 컨테이너가 존재하지 않아 오류 발생.",
-          solve: "useEffect을 활용하여 지도가 마운트된 후 적절한 시점에 데이터 요청하도록 수정.",
+          problem: "키워드 검색 기능을 커스텀 훅으로 분리했지만, 필요한 페이지의 상태 값을 받아오지 못했습니다",
+          solve: "검색이 필요한 페이지에서 상태 변수를 정의하고, 상태 업데이트 함수를 커스텀 훅에 전달하여 내부에서 상태를 변경할 수 있도록 수정헸습니다",
         },
-        retrospect: "렌더링 타이밍을 고려하지 않아 문제가 발생했지만, 이를 통해 useEffect의 동작 원리와 마운트 개념을 다시 한번 이해할 수 있었습니다.",
+        retrospect: "다른 컴포넌트에서 상태 업데이트 함수를 props로 받아 처리 후에 값을 돌려주는 개념을 이해하고 이후 프로젝트에서 다양하게 활용할 수 있었습니다.",
       },
     ],
   },
