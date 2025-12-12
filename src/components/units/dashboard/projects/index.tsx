@@ -27,7 +27,7 @@ export default function DashboardProjects() {
         <div className="py-6 font-bold text-2xl">아이디어를 실현하고 협업한 다양한 프로젝트를 만나보세요.</div>
 
         {/* 케로셀 */}
-        <Carousel className="h-full -mx-2">
+        <Carousel className="h-full">
           <CarouselContent className="h-full -ml-0">
             {projects.map((p) => (
               <CarouselItem key={p.id} className="basis-full md:basis-1/2 lg:basis-1/3 px-0 sm:px-2">

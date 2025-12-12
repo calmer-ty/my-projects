@@ -16,7 +16,7 @@ export default function DashboardSkills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-220 mx-auto"
+        className="max-w-220 mx-auto px-10"
       >
         {/* title */}
         <div className="text-center">

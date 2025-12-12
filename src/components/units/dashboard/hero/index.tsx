@@ -30,12 +30,12 @@ export default function DashboardHero() {
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 1.05 }} // 마우스 올리면 살짝 확대
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center mt-6 text-white"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-full mt-6 px-10 text-white"
         >
           <Reordering />
           <p className="mb-6 text-xl sm:text-2xl">안녕하세요!</p>
           <p className="text-4xl sm:text-5xl font-bold leading-14"></p>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="mb-6 text-4xl leading-14 font-bold sm:text-5xl ">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="mb-6 text-4xl leading-14 font-bold sm:text-5xl break-keep">
             프론트엔드 개발자 김태연입니다.
           </motion.p>
           <p className="mb-12 text-lg sm:text-xl break-keep">사용자가 필요한 서비스를 고민하고 실현해 나갑니다.</p>
