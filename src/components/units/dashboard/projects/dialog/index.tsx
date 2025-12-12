@@ -44,16 +44,16 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                   </div>
                   {/* 사용 기술 */}
                   {selectedProject.skills && (
-                    <div className="flex flex-col items-center gap-2 sm:flex-row">
+                    <div className="flex flex-col gap-2 sm:flex-row">
                       <span className="w-18 shrink-0 font-bold">사용 기술</span>
                       <ul className="flex flex-wrap gap-2">
                         {selectedProject.skills.map((skill) => (
-                          <li key={skill.icon} className="flex gap-1 text-sm">
+                          <li key={skill.icon} className="flex flex-col gap-1 text-sm">
                             <div className="flex shrink-0">
-                              <i className="mt-1 mr-1">{skillIcons[skill.icon]}</i>
-                              <span>{skill.icon}</span>
+                              <i className="mt-1">{skillIcons[skill.icon]}</i>
+                              <span className="ml-1">{skill.icon}:</span>
                             </div>
-                            : {skill.reason}
+                            <p>{skill.reason}</p>
                           </li>
                         ))}
                       </ul>
