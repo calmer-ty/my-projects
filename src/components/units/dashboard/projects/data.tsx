@@ -67,21 +67,29 @@ export const projectsData = [
     id: "project-01",
     title: "트래블 다이어리",
     desc: "원하는 장소에 메모를 작성하고, 북마크별로 메모를 관리하여 나만의 여행을 지도에 기록해보세요!",
-    date: "2025.06 ~ 업데이트 중",
+    date: "2025.06 ~ 2025.11",
     projectType: "팀 프로젝트",
+
+    skills: {
+      frontend: ["React", "Next.js"],
+      styles: ["Tailwind CSS", "ShadCn"],
+      dataSource: ["Firebase", "공공데이터 API"],
+      deployment: ["Vercel"],
+      etc: ["Google Maps"],
+    },
+
     url: "https://travel-diary.hyerin.store",
     github: "https://github.com/calmer-ty/travel-diary",
-    skills: [{ icon: "Google Maps", reason: "세계 지도의 데이터를 구현할 수 있는 것 중에 가장 접근성이 좋다고 생각하여 선정하였습니다." }],
 
     features: [
       {
         type: "responsible",
         title: "맵 데이터 시각화 및 관리",
         tasks: [
-          <span key="01">
+          <p key="01">
             사용자가 원하는 장소에 정보를 입력하고 <strong className="text-red-500">POI(Point of Interest)</strong> 데이터를 기반으로 저장
-          </span>,
-          <span key="02">생성된 마커를 클릭 시 모달창을 통해 데이터를 수정, 삭제 가능</span>,
+          </p>,
+          <p key="02">생성된 마커를 클릭 시 모달창을 통해 데이터를 수정, 삭제 가능</p>,
         ],
         difficult: {
           problem: "기획 과정에서 지도 상 마커 렌더링 대상 데이터 선정이 핵심 과제였습니다.",
@@ -93,12 +101,12 @@ export const projectsData = [
         type: "responsible",
         title: "북마크별 기록 정렬",
         tasks: [
-          <span key="01">
+          <p key="01">
             사용자가 지도에서 기록했던 데이터들을 <strong className="text-red-500">북마크별</strong>로 정리하여 렌더링
-          </span>,
-          <span key="02">
+          </p>,
+          <p key="02">
             각 북마크 그룹을 열면 그 안에 포함된 데이터를 <strong className="text-red-500">날짜별</strong>로 확인 가능
-          </span>,
+          </p>,
         ],
         difficult: {
           problem: "북마크에 해당되는 데이터만 필터링하는 기능을 구현할 때, 어떤 방식으로 접근해야할지 감을 잡지 못했습니다.",
@@ -122,12 +130,12 @@ export const projectsData = [
         type: "core",
         title: "여행 주의 국가 표시",
         tasks: [
-          <span key="01">
+          <p key="01">
             여행 주의 <strong className="text-red-500">단계별</strong>로 국가 리스트 정렬
-          </span>,
-          <span key="02">
+          </p>,
+          <p key="02">
             국가별 리스트 항목 클릭시 모달창으로 <strong className="text-red-500">세부 정보</strong> 제공
-          </span>,
+          </p>,
         ],
       },
     ],
@@ -145,9 +153,16 @@ export const projectsData = [
     desc: "여러 국가에서 매입한 상품 정보들을 기록하고, 예상 수익을 계산해보세요!",
     date: "2025.05 ~ 2025.10",
     projectType: "개인 프로젝트",
+
+    skills: {
+      frontend: ["React", "Next.js"],
+      styles: ["Tailwind CSS", "ShadCn"],
+      dataSource: ["Firebase", "환율 API"],
+      deployment: ["Vercel"],
+    },
+
     url: "https://vintage-manager.calmerproject.store",
     github: "https://github.com/calmer-ty/vintage-manager",
-    skills: [{ icon: "환율 REST API", reason: "해외 상품들을 구매하기 위해서는 외국 통화와 환전을 거쳐야 하기 때문에 필수로 사용하였습니다." }],
 
     features: [
       {
@@ -160,17 +175,17 @@ export const projectsData = [
         //   "데이터는 대시보드에 활용",
         // ],
         tasks: [
-          <span key="01">
+          <p key="01">
             사용자가 선택한 외국 통화 금액 입력 → 외부 <strong className="text-red-500">환율 API</strong> 호출 → <strong className="text-red-500">원화 환산</strong> 후 외국 통화/원화 값 Firestore에
             저장
-          </span>,
-          <span key="02">
+          </p>,
+          <p key="02">
             저장된 외국 통화/원화 데이터를 <strong className="text-red-500">표</strong> 컴포넌트에서 시각화
-          </span>,
-          <span key="03">
+          </p>,
+          <p key="03">
             <strong className="text-red-500">등급</strong>에 따라 외국 통화 입력 기능 <strong className="text-red-500">접근 제한</strong>
-          </span>,
-          <span key="04">데이터는 대시보드에 활용</span>,
+          </p>,
+          <p key="04">데이터는 대시보드에 활용</p>,
         ],
         difficult: {
           problem: "변동하는 통화 데이터와 원화로 환산해 저장할 때, 데이터 필드 구조가 복잡해 활용이 어려워 저장 로직을 자주 수정해야 했습니다.",
@@ -187,13 +202,13 @@ export const projectsData = [
         //   "판매 등록 시 패키지 데이터를 일부 추출하여 판매 데이터로 전송 및 활용",
         // ],
         tasks: [
-          <span key="01">상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장</span>,
-          <span key="02">
+          <p key="01">상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장</p>,
+          <p key="02">
             입력한 상품 데이터를 패키지 단위로 <strong className="text-red-500">그룹화</strong>하여 저장 및 관리
-          </span>,
-          <span key="02">
+          </p>,
+          <p key="02">
             판매 등록 시 패키지 데이터를 <strong className="text-red-500">일부 추출</strong>하여 판매 데이터로 <strong className="text-red-500">활용</strong>
-          </span>,
+          </p>,
         ],
         difficult: {
           problem: "매입 & 판매 기능을 따로 개발한 상태에서, 두 기능을 통합하는 과정에서 여러 번 수정이 필요했습니다.",
@@ -206,57 +221,62 @@ export const projectsData = [
         type: "core",
         title: "판매 관리 시스템",
         tasks: [
-          <span key="01">매입 관리 Firestore에 저장된 상품 데이터를 추출 → 판매 데이터 형식으로 변환 후 저장</span>,
-          <span key="02">
+          <p key="01">매입 관리 Firestore에 저장된 상품 데이터를 추출 → 판매 데이터 형식으로 변환 후 저장</p>,
+          <p key="02">
             판매가 및 부가 비용 입력 → 순이익 계산 후 Firestore에 저장 → <strong className="text-red-500">대시보드 차트</strong>로 시각화
-          </span>,
-          <span key="03">판매 상태 변경 시 Firestore 업데이트 → 대시보드에 데이터 반영</span>,
+          </p>,
+          <p key="03">판매 상태 변경 시 Firestore 업데이트 → 대시보드에 데이터 반영</p>,
         ],
       },
     ],
   },
   {
     id: "project-03",
-    title: "부동산 마켓",
-    desc: "매물 실거래가를 확인하고, 자산 상승률과 매물 예상 가격 변동을 반영하여 원하는 매물의 매수 시기를 예측해보세요!",
-    date: "2024.06 ~ 2025.01",
+    title: "부동산 실거래 지도",
+    desc: "원하는 건물 유형과 지역을 선택하여 건물의 시세를 알아보고 시각화한 데이터를 참고해보세요.",
+    date: "2025.12 ~ 2025.01",
     projectType: "개인 프로젝트",
-    url: "https://realestate.calmerproject.store",
-    github: "https://github.com/calmer-ty/frontend-realestate",
-    skills: [{ icon: "Naver Maps", reason: "국내 지도 서비스로 접근성이 뛰어나 국내 공공데이터를 활용하기 좋기에 Naver Maps를 선택했습니다." }],
+
+    skills: {
+      frontend: ["React", "Next.js"],
+      styles: ["Emotion"],
+      dataSource: ["Firebase", "공공데이터 API"],
+      deployment: ["Vercel"],
+      etc: ["Naver Maps"],
+    },
+
+    url: "https://real-estate.calmerproject.store",
+    github: "https://github.com/calmer-ty/real-estate_v2",
 
     features: [
       {
         type: "core",
-        title: "지도 기반 매물 시각화",
+        title: "건물 데이터 지도로 시각화",
         tasks: [
-          <span key="01">
+          <p key="01">
             <strong className="text-red-500">실거래가 데이터</strong>를 기반으로 지도에 매물 정보를 마커로 표시
-          </span>,
-          <span key="02">
+          </p>,
+          <p key="02">
             <strong className="text-red-500">마커 클러스터링</strong>으로 근방 마커들을 최적화
-          </span>,
-          <span key="03">
-            드롭다운 메뉴로 사용자가 <strong className="text-red-500">선택한 지역</strong>의 데이터만 조회하여 최적화
-          </span>,
+          </p>,
         ],
         difficult: {
-          problem: "한 번에 모든 데이터를 가져와 마커가 많아지면서 렉 발생했습니다.",
-          solve: "사용자가 선택한 지역만 로드하고 마커 클러스터링을 사용하여 최적화했습니다. → 로딩 속도 약 1분 → 약 4초로 단축.",
+          problem: "기능 개발은 완료했지만 코드가 복잡하여 유지보수 시 어려움이 있었습니다.",
+          solve: "AI 도구를 통해 코드의 복잡성을 파악하고, 기능마다 구간을 나눠 정리해 유지보수가 편리해졌습니다.",
         },
-        retrospect: "데이터 로딩 속도의 중요성을 체감했으며, 최적화 과정을 통해 효율적인 데이터 분할 방법을 익혔습니다. 이를 통해 사용자 경험을 개선하는 방법을 배울 수 있었습니다.",
+        retrospect: "복잡한 기능일수록 기능을 잘 나눠 작업하고 유지보수를 고려하여 코드를 관리해야함을 깨달았습니다",
       },
       {
         type: "core",
-        title: "건물 유형 분류 및 API 활용",
+        title: "건물 데이터 조회 최적화",
         tasks: [
-          <span key="01">
-            <strong className="text-red-500">선택한 건물 유형</strong> 데이터만 조회하여 마커 렌더링
-          </span>,
+          <p key="01">
+            <strong className="text-red-500">원하는 건물 유형/지역</strong>을 선택하여 건물 데이터를 조회
+          </p>,
         ],
         difficult: {
-          problem: "처음에 아파트 데이터만을 기준으로 작업하여, 이후 빌라나 오피스텔 데이터를 추가할 때 코드의 일관성을 유지하는 것이 어려웠습니다.",
-          solve: "REST API의 데이터 구조를 분석하여 공통된 타입을 정의하고, 엔드포인트를 분기 처리하여 프로젝트의 확장성을 확보했습니다.",
+          problem: "처음에는 아파트 데이터만을 기준으로 기능을 구현하여, 이후 빌라와 오피스텔 데이터를 추가할 때 로직의 일관성을 유지하기 어려웠습니다.",
+          solve: "데이터 구조와 조회 로직을 공통화하도록 리팩토링한 뒤, 아파트 외 데이터도 동일한 패턴으로 확장할 수 있도록 개선했습니다.",
         },
         retrospect:
           "프로젝트 초기 설계 단계에서 확장 가능성을 충분히 고려하지 않아 예상치 못한 어려움을 겪었습니다. 이번 경험을 통해 기능 확장성을 고려하여 설계하는 것이 중요하다는 점을 깨달았습니다.",
@@ -276,7 +296,7 @@ export const projectsData = [
       {
         type: "core",
         title: "카카오 맵",
-        tasks: [<span key="01">위/경도 값을 받아와 표시하거나, 사용자가 지도 안에 지역을 선택하면 주소 값과 위/경도를 표시</span>],
+        tasks: [<p key="01">위/경도 값을 받아와 표시하거나, 사용자가 지도 안에 지역을 선택하면 주소 값과 위/경도를 표시</p>],
         difficult: {
           problem: "페이지가 렌더링되기 전에 지도 관련 코드가 실행되어, 지도 컨테이너가 존재하지 않아 오류 발생.",
           solve: "useEffect을 활용하여 지도가 마운트된 후 적절한 시점에 데이터 요청하도록 수정.",
@@ -298,7 +318,7 @@ export const projectsData = [
       {
         type: "core",
         title: "카카오 맵",
-        tasks: [<span key="01">특정 텍스트를 검색하여 원하는 게시글을 찾기</span>],
+        tasks: [<p key="01">특정 텍스트를 검색하여 원하는 게시글을 찾기</p>],
         difficult: {
           problem: "키워드 검색 기능을 커스텀 훅으로 분리했지만, 필요한 페이지의 상태 값을 받아오지 못했습니다",
           solve: "검색이 필요한 페이지에서 상태 변수를 정의하고, 상태 업데이트 함수를 커스텀 훅에 전달하여 내부에서 상태를 변경할 수 있도록 수정헸습니다",

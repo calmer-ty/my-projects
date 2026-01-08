@@ -16,7 +16,9 @@ export default function Feature({ feature }: { feature: IFeature }) {
           </h4>
           <ul className="space-y-2 text-sm">
             {feature.tasks.map((item, index) => (
-              <li key={index}>• {item}</li>
+              <li key={index} className="flex gap-2">
+                • {item}
+              </li>
             ))}
           </ul>
         </li>
@@ -26,11 +28,11 @@ export default function Feature({ feature }: { feature: IFeature }) {
             <h4 className="mb-2 text-md font-semibold">어려웠던 점</h4>
             <ul className="space-y-2">
               <li className="flex gap-1 text-sm">
-                <span className="shrink-0">• 문제:</span>
+                <span className="shrink-0">문제:</span>
                 {feature.difficult.problem}
               </li>
               <li className="flex gap-1 text-sm">
-                <span className="shrink-0">• 해결:</span>
+                <span className="shrink-0">해결:</span>
                 {feature.difficult.solve}
               </li>
             </ul>
@@ -40,7 +42,7 @@ export default function Feature({ feature }: { feature: IFeature }) {
         {feature.retrospect && (
           <li>
             <h4 className="mb-2 text-md font-semibold">회고</h4>
-            <p className="text-sm leading-6">• {feature.retrospect}</p>
+            <p className="text-sm leading-6">{feature.retrospect}</p>
           </li>
         )}
       </ul>

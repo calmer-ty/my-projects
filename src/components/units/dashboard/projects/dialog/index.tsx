@@ -2,9 +2,8 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
 
-import Feature from "./feature";
+import DialogFeature from "./DialogFeature";
 
-import { skillIcons } from "@/commons/skillIcons";
 import { projectsData } from "../data";
 
 interface IProjectsDialogProps {
@@ -33,7 +32,7 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {/* 작업 기간 및 프로젝트 인원 */}
-                  <div className="flex flex-col gap-4 sm:flex-row">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <p className="flex items-center gap-2">
                       <FaRegCalendarAlt /> {selectedProject.date}
                     </p>
@@ -44,31 +43,41 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                   </div>
                   {/* 사용 기술 */}
                   {selectedProject.skills && (
-                    <div className="flex flex-col gap-2 sm:flex-row">
-                      <span className="w-18 shrink-0 font-bold">사용 기술</span>
-                      <ul className="flex flex-wrap gap-2">
-                        {selectedProject.skills.map((skill) => (
-                          <li key={skill.icon} className="flex flex-col gap-1 text-sm">
-                            <div className="flex shrink-0">
-                              <i className="mt-1">{skillIcons[skill.icon]}</i>
-                              <span className="ml-1">{skill.icon}:</span>
-                            </div>
-                            <p>{skill.reason}</p>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <ul className="flex flex-col flex-wrap gap-2">
+                      <li className="flex flex-col sm:flex-row gap-2">
+                        <span className="inline-block w-28 shrink-0 font-bold">프론트엔드</span>
+                        {selectedProject.skills.frontend.join(", ")}
+                      </li>
+                      <li className="flex flex-col sm:flex-row gap-2">
+                        <span className="inline-block w-28 shrink-0 font-bold">스타일</span>
+                        {selectedProject.skills.styles.join(", ")}
+                      </li>
+                      <li className="flex flex-col sm:flex-row gap-2">
+                        <span className="inline-block w-28 shrink-0 font-bold">데이터 소스</span>
+                        {selectedProject.skills.dataSource.join(", ")}
+                      </li>
+                      <li className="flex flex-col sm:flex-row gap-2">
+                        <span className="inline-block w-28 shrink-0 font-bold">배포</span>
+                        {selectedProject.skills.deployment.join(", ")}
+                      </li>
+                      {selectedProject.skills.etc && (
+                        <li className="flex flex-col sm:flex-row gap-2">
+                          <span className="inline-block w-28 shrink-0 font-bold">그 외</span>
+                          {selectedProject.skills.etc.join(", ")}
+                        </li>
+                      )}
+                    </ul>
                   )}
                   {selectedProject.url && (
-                    <div className="flex flex-col gap-2 sm:flex-row">
-                      <span className="w-18 shrink-0 font-bold">URL</span>
+                    <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t border-dotted border-gray-300">
+                      <span className="w-28 shrink-0 font-bold">URL</span>
                       <a href={selectedProject.url} className="text-blue-600 underline" target="_blank">
                         {selectedProject.url}
                       </a>
                     </div>
                   )}
-                  <div className="flex flex-col gap-2 sm:flex-row">
-                    <span className="w-18 shrink-0 font-bold">Github</span>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <span className="w-28 shrink-0 font-bold">Github</span>
                     <a href={selectedProject.github} className="text-sm" target="_blank">
                       {selectedProject.github}
                     </a>
@@ -80,13 +89,14 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
               {selectedProject.features
                 .filter((el) => el.type === "responsible")
                 .map((feature, idx) => (
-                  <Feature key={`${feature.title}_${idx}`} feature={feature} />
+                  <DialogFeature key={`${feature.title}_${idx}`} feature={feature} />
                 ))}
               {selectedProject.features
                 .filter((el) => el.type === "core")
                 .map((feature, idx) => (
-                  <Feature key={`${feature.title}_${idx}`} feature={feature} />
+                  <DialogFeature key={`${feature.title}_${idx}`} feature={feature} />
                 ))}
+
               {/* 향후 계획 */}
               {selectedProject.futurePlans && (
                 <div className="px-4 py-8 border-b border-gray-200 last:border-0">
@@ -95,7 +105,9 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                     <h4 className="mb-2 text-md font-semibold">{selectedProject.futurePlans.title}</h4>
                     <ul className="space-y-2 text-sm">
                       {selectedProject.futurePlans.contents.map((content, index) => (
-                        <li key={index}>• {content}</li>
+                        <li key={index} className="flex gap-2">
+                          • <p>{content}</p>
+                        </li>
                       ))}
                     </ul>
                   </div>
