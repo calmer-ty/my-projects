@@ -168,12 +168,6 @@ export const projectsData = [
       {
         type: "core",
         title: "외국 통화 데이터 시각화",
-        // tasks: [
-        //   "사용자가 선택한 외국 통화 금액 입력 → 외부 환율 API 호출 → 원화 환산 후 외국 통화/원화 값 Firestore에 저장",
-        //   "저장된 외국 통화/원화 데이터를 표 컴포넌트에서 시각화",
-        //   "등급제에 따라 외국 통화 입력 기능 접근을 제한",
-        //   "데이터는 대시보드에 활용",
-        // ],
         tasks: [
           <p key="01">
             사용자가 선택한 외국 통화 금액 입력 → 외부 <strong className="text-red-500">환율 API</strong> 호출 → <strong className="text-red-500">원화 환산</strong> 후 외국 통화/원화 값 Firestore에
@@ -196,11 +190,6 @@ export const projectsData = [
       {
         type: "core",
         title: "매입 관리 시스템",
-        // tasks: [
-        //   "상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장",
-        //   "입력한 상품 데이터를 패키지 단위로 그룹화하여 저장 및 관리",
-        //   "판매 등록 시 패키지 데이터를 일부 추출하여 판매 데이터로 전송 및 활용",
-        // ],
         tasks: [
           <p key="01">상품 정보, 매입가, 부가 비용 등 데이터 입력 후 Firestore에 저장</p>,
           <p key="02">
@@ -234,7 +223,7 @@ export const projectsData = [
     id: "project-03",
     title: "부동산 실거래 지도",
     desc: "원하는 건물 유형과 지역을 선택하여 건물의 시세를 알아보고 시각화한 데이터를 참고해보세요.",
-    date: "2025.12 ~ 2025.01",
+    date: "2025.12 ~ 2026.01",
     projectType: "개인 프로젝트",
 
     skills: {
@@ -251,7 +240,7 @@ export const projectsData = [
     features: [
       {
         type: "core",
-        title: "건물 데이터 지도로 시각화",
+        title: "건물 정보 지도 시각화",
         tasks: [
           <p key="01">
             <strong className="text-red-500">실거래가 데이터</strong>를 기반으로 지도에 매물 정보를 마커로 표시
@@ -268,10 +257,10 @@ export const projectsData = [
       },
       {
         type: "core",
-        title: "건물 데이터 조회 최적화",
+        title: "건물 유형별 데이터 조회",
         tasks: [
           <p key="01">
-            <strong className="text-red-500">원하는 건물 유형/지역</strong>을 선택하여 건물 데이터를 조회
+            원하는 <strong className="text-red-500">건물 유형/지역</strong>을 선택하여 건물 데이터를 조회
           </p>,
         ],
         difficult: {
@@ -280,6 +269,19 @@ export const projectsData = [
         },
         retrospect:
           "프로젝트 초기 설계 단계에서 확장 가능성을 충분히 고려하지 않아 예상치 못한 어려움을 겪었습니다. 이번 경험을 통해 기능 확장성을 고려하여 설계하는 것이 중요하다는 점을 깨달았습니다.",
+      },
+      {
+        type: "core",
+        title: "건물 정보 데이터 시각화",
+        tasks: [
+          <p key="01">
+            <strong className="text-red-500">선택한 매물</strong>의 대한 전반적인 정보 제공
+          </p>,
+          <p key="02">
+            거래가 평균 <strong className="text-red-500">그래프</strong>로 시각화
+          </p>,
+          <p key="03">계약된 매물 리스트 표시</p>,
+        ],
       },
     ],
   },
