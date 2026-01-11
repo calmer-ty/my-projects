@@ -11,7 +11,7 @@ interface IProjectsDialogProps {
   setSelectedId: React.Dispatch<React.SetStateAction<string | null>>;
 }
 export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsDialogProps) {
-  const selectedProject = projectsData.find((p) => p.basic.id === selectedId);
+  const selectedProject = projectsData.find((p) => p.info.id === selectedId);
 
   return (
     <Dialog open={!!selectedId} onOpenChange={() => setSelectedId(null)}>
@@ -19,8 +19,8 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
         {selectedProject && (
           <>
             <DialogHeader>
-              <DialogTitle>{selectedProject.basic.title}</DialogTitle>
-              <DialogDescription>{selectedProject.basic.desc}</DialogDescription>
+              <DialogTitle>{selectedProject.info.title}</DialogTitle>
+              <DialogDescription>{selectedProject.info.desc}</DialogDescription>
             </DialogHeader>
 
             {/* 내용 */}
@@ -33,13 +33,14 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                 <CardContent className="space-y-6">
                   {/* 작업 기간 및 프로젝트 인원 */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <p className="flex items-center gap-2">
-                      <FaRegCalendarAlt /> {selectedProject.basic.date}
-                    </p>
-                    <p className="flex items-center gap-2">
+                    <span className="flex items-center gap-2">
+                      <FaRegCalendarAlt /> {selectedProject.info.date}
+                    </span>
+                    <div className="flex items-center gap-2">
                       <FaUser />
-                      {selectedProject.basic.projectType}
-                    </p>
+                      <span>{selectedProject.info.projectType}</span>
+                      <span>{selectedProject.info.contribution}</span>
+                    </div>
                   </div>
                   {/* 사용 기술 */}
                   <ul className="flex flex-col flex-wrap gap-2">

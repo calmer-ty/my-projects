@@ -12,12 +12,18 @@ export interface IFeature {
 }
 
 interface IProjectsData {
-  basic: {
+  info: {
     id: string;
     title: string;
     desc: string;
     date: string;
     projectType: string;
+    // contribution?: {
+    //   plan: string;
+    //   dev: string;
+    //   design: string;
+    // };
+    contribution?: string;
   };
 
   skills: {
@@ -97,12 +103,18 @@ export const projects = [
 
 export const projectsData: IProjectsData[] = [
   {
-    basic: {
+    info: {
       id: "project-01",
       title: "트래블 다이어리",
       desc: "원하는 장소에 메모를 작성하고, 북마크별로 메모를 관리하여 나만의 여행을 지도에 기록해보세요!",
       date: "2025.06 ~ 2025.11",
       projectType: "팀 프로젝트",
+      contribution: "(기획 60%, 개발: 50%, 디자인: 30%)",
+      // contribution: {
+      //   plan: "60%",
+      //   dev: "50%",
+      //   design: "30%",
+      // },
     },
 
     skills: {
@@ -237,7 +249,7 @@ export const projectsData: IProjectsData[] = [
     },
   },
   {
-    basic: {
+    info: {
       id: "project-02",
       title: "빈티지 노트",
       desc: "여러 국가에서 매입한 상품 정보들을 기록하고, 예상 수익을 계산해보세요!",
@@ -339,7 +351,7 @@ export const projectsData: IProjectsData[] = [
     ],
   },
   {
-    basic: {
+    info: {
       id: "project-03",
       title: "부동산 실거래 지도",
       desc: "원하는 건물 유형과 지역을 선택하여 건물의 시세를 알아보고 시각화한 데이터를 참고해보세요.",
@@ -439,7 +451,7 @@ export const projectsData: IProjectsData[] = [
     ],
   },
   {
-    basic: {
+    info: {
       id: "project-04",
       title: "중고 마켓 서비스",
       desc: "중고 상품을 등록하고 카카오 페이로 구매 테스트와 거래 장소를 카카오 지도로 확인해보세요!",
@@ -492,7 +504,7 @@ export const projectsData: IProjectsData[] = [
     ],
   },
   {
-    basic: {
+    info: {
       id: "project-05",
       title: "자유 게시판 서비스",
       desc: "게시물을 등록, 관리하고 다른 사용자끼리 게시물을 공유해보세요!",
