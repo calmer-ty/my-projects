@@ -11,7 +11,7 @@ interface IProjectsDialogProps {
   setSelectedId: React.Dispatch<React.SetStateAction<string | null>>;
 }
 export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsDialogProps) {
-  const selectedProject = projectsData.find((p) => p.id === selectedId);
+  const selectedProject = projectsData.find((p) => p.basic.id === selectedId);
 
   return (
     <Dialog open={!!selectedId} onOpenChange={() => setSelectedId(null)}>
@@ -19,8 +19,8 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
         {selectedProject && (
           <>
             <DialogHeader>
-              <DialogTitle>{selectedProject.title}</DialogTitle>
-              <DialogDescription>{selectedProject.desc}</DialogDescription>
+              <DialogTitle>{selectedProject.basic.title}</DialogTitle>
+              <DialogDescription>{selectedProject.basic.desc}</DialogDescription>
             </DialogHeader>
 
             {/* 내용 */}
@@ -34,54 +34,53 @@ export default function ProjectsDialog({ selectedId, setSelectedId }: IProjectsD
                   {/* 작업 기간 및 프로젝트 인원 */}
                   <div className="flex flex-col sm:flex-row gap-4">
                     <p className="flex items-center gap-2">
-                      <FaRegCalendarAlt /> {selectedProject.date}
+                      <FaRegCalendarAlt /> {selectedProject.basic.date}
                     </p>
                     <p className="flex items-center gap-2">
                       <FaUser />
-                      {selectedProject.projectType}
+                      {selectedProject.basic.projectType}
                     </p>
                   </div>
                   {/* 사용 기술 */}
-                  {selectedProject.skills && (
-                    <ul className="flex flex-col flex-wrap gap-2">
+                  <ul className="flex flex-col flex-wrap gap-2">
+                    <li className="flex flex-col sm:flex-row gap-2">
+                      <span className="inline-block w-36 shrink-0 font-bold">프론트엔드</span> {selectedProject.skills.frontend.join(", ")}
+                    </li>
+                    <li className="flex flex-col sm:flex-row gap-2">
+                      <span className="inline-block w-36 shrink-0 font-bold">상태관리</span> {selectedProject.skills.manager?.state?.join(", ")}
+                    </li>
+                    <li className="flex flex-col sm:flex-row gap-2">
+                      <span className="inline-block w-36 shrink-0 font-bold">빌드도구</span> {selectedProject.skills.manager?.build?.join(", ")}
+                    </li>
+                    <li className="flex flex-col sm:flex-row gap-2">
+                      <span className="inline-block w-36 shrink-0 font-bold">스타일</span> {selectedProject.skills.styles.join(", ")}
+                    </li>
+                    <li className="flex flex-col sm:flex-row gap-2">
+                      <span className="inline-block w-36 shrink-0 font-bold">데이터 및 배포</span> {selectedProject.skills.dataDeploy.join(", ")}
+                    </li>
+                    {selectedProject.skills.etc && (
                       <li className="flex flex-col sm:flex-row gap-2">
-                        <span className="inline-block w-28 shrink-0 font-bold">프론트엔드</span>
-                        {selectedProject.skills.frontend.join(", ")}
+                        <span className="inline-block w-36 shrink-0 font-bold">그 외</span> {selectedProject.skills.etc.join(", ")}
                       </li>
-                      <li className="flex flex-col sm:flex-row gap-2">
-                        <span className="inline-block w-28 shrink-0 font-bold">스타일</span>
-                        {selectedProject.skills.styles.join(", ")}
-                      </li>
-                      <li className="flex flex-col sm:flex-row gap-2">
-                        <span className="inline-block w-28 shrink-0 font-bold">데이터 소스</span>
-                        {selectedProject.skills.dataSource.join(", ")}
-                      </li>
-                      <li className="flex flex-col sm:flex-row gap-2">
-                        <span className="inline-block w-28 shrink-0 font-bold">배포</span>
-                        {selectedProject.skills.deployment.join(", ")}
-                      </li>
-                      {selectedProject.skills.etc && (
-                        <li className="flex flex-col sm:flex-row gap-2">
-                          <span className="inline-block w-28 shrink-0 font-bold">그 외</span>
-                          {selectedProject.skills.etc.join(", ")}
-                        </li>
-                      )}
-                    </ul>
-                  )}
-                  {selectedProject.url && (
-                    <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t border-dotted border-gray-300">
-                      <span className="w-28 shrink-0 font-bold">URL</span>
-                      <a href={selectedProject.url} className="text-blue-600 underline" target="_blank">
-                        {selectedProject.url}
+                    )}
+                  </ul>
+
+                  <ul className="flex flex-col flex-wrap gap-2 pt-4 border-t border-dotted border-gray-300">
+                    {selectedProject.link.url && (
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <span className="w-36 shrink-0 font-bold">URL</span>
+                        <a href={selectedProject.link.url} className="text-blue-600 underline" target="_blank">
+                          {selectedProject.link.url}
+                        </a>
+                      </div>
+                    )}
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <span className="w-36 shrink-0 font-bold">Github</span>
+                      <a href={selectedProject.link.github} className="text-sm" target="_blank">
+                        {selectedProject.link.github}
                       </a>
                     </div>
-                  )}
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <span className="w-28 shrink-0 font-bold">Github</span>
-                    <a href={selectedProject.github} className="text-sm" target="_blank">
-                      {selectedProject.github}
-                    </a>
-                  </div>
+                  </ul>
                 </CardContent>
               </Card>
 
