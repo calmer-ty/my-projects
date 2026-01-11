@@ -122,7 +122,7 @@ export const projectsData: IProjectsData[] = [
       styles: ["Tailwind CSS", "ShadCn"],
       dataDeploy: ["Firebase", "공공데이터 API, Vercel"],
       manager: {
-        build: ["Yarn, Context API"],
+        build: ["Yarn"],
         state: ["Context API"],
       },
       etc: ["Google Maps"],
