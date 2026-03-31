@@ -37,7 +37,7 @@ export default function DashboardHero() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="mb-6 text-xl sm:text-4xl leading-relaxed font-bold break-keep">
             사용자 경험과 컴포넌트 구조를
             <br />
-            고민하는 개발자 김태연입니다.
+            고민하는 퍼블리셔 / 개발자 김태연입니다.
           </motion.p>
           {/* <p className="mb-12 text-lg sm:text-xl break-keep">사용자가 필요한 서비스를 고민하고 실현해 나갑니다.</p> */}
           <div className="flex gap-4">
