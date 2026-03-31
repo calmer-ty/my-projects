@@ -268,7 +268,7 @@ export const projectsData: IProjectsData[] = [
     },
 
     link: {
-      url: "https://vintage-manager.calmerproject.store",
+      url: "https://vintage-manager.calmer01.store",
       github: "https://github.com/calmer-ty/vintage-manager",
     },
 
@@ -371,7 +371,7 @@ export const projectsData: IProjectsData[] = [
     },
 
     link: {
-      url: "https://real-estate.calmerproject.store",
+      url: "https://real-estate.calmer01.store",
       github: "https://github.com/calmer-ty/real-estate_v2",
     },
 
