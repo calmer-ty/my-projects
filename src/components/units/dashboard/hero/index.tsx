@@ -34,7 +34,7 @@ export default function DashboardHero() {
         >
           <Reordering />
           <p className="mb-6 text-xl sm:text-2xl">안녕하세요!</p>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="mb-6 text-xl sm:text-4xl leading-relaxed font-bold break-keep">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="mb-6 text-xl text-center sm:text-4xl leading-relaxed font-bold break-keep">
             사용자 경험과 컴포넌트 구조를
             <br />
             고민하는 퍼블리셔 / 개발자 김태연입니다.
