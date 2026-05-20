@@ -15,10 +15,7 @@ export default function DashboardProjects() {
         <Carousel className="h-full">
           <CarouselContent className="h-full -ml-0">
             {projects.map((p) => {
-              // 각 카드마다 개별적으로 탭 상태를 가지도록 map 내부에서 선언
-              const [activeTab, setActiveTab] = useState<"features" | "trouble">("features");
-
-              return <ProjectsCard key={p.id} project={p} activeTab={activeTab} setActiveTab={setActiveTab} />;
+              return <ProjectsCard key={p.id} project={p} />;
             })}
           </CarouselContent>
           <CarouselPrevious className="hidden sm:flex cursor-pointer" />
@@ -31,7 +28,10 @@ export default function DashboardProjects() {
   );
 }
 
-function ProjectsCard({ project, activeTab, setActiveTab }: { project: IProject; activeTab: "features" | "trouble"; setActiveTab: (tab: "features" | "trouble") => void }) {
+function ProjectsCard({ project }: { project: IProject }) {
+  // 각 카드마다 개별적으로 탭 상태를 가지도록 map 내부에서 선언
+  const [activeTab, setActiveTab] = useState<"features" | "trouble">("features");
+
   return (
     <CarouselItem key={project.id} className="basis-full md:basis-1/2 px-0 sm:px-4">
       <div className="flex flex-col gap-6 relative overflow-hidden size-full p-0 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col">

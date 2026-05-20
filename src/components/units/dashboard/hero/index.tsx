@@ -20,6 +20,7 @@ export default function DashboardHero() {
       </a>
       <img
         src="/images/main.jpg"
+        alt="메인 화면 이미지"
         className="absolute inset-0 w-full h-full object-cover
              brightness-70 dark:brightness-20"
       />
