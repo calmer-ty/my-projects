@@ -76,7 +76,7 @@ export const projects = [
     // source: "Image by Freepik",
     // sourceUrl: "https://www.freepik.com/free-photo/woman-hand-with-hat-against-sky_4495967.htm#fromView=keyword&page=1&position=5&uuid=700cd5f2-ed87-4250-8d97-28698156c7c2&query=Sunny+travel+day",
 
-    thumbnail: "images/travel-diary.jpg",
+    thumbnail: "images/ppoyanggun-earth.jpg",
     features: ["사용자가 원하는 장소에 방문일과 메모를 남기기", "북마크별로 메모를 관리", "국가별 여행 경보 데이터 제공"],
     troubleshooting: {
       problem: "마커 정보에서 북마크 변경 시, 엉뚱한 북마크가 덮어씌워지는 문제가 발생했습니다.",
@@ -98,7 +98,7 @@ export const projects = [
     // sourceUrl:
     //   "https://kr.freepik.com/free-photo/spring-wardrobe-switch-high-angle_39701011.htm#fromView=keyword&page=1&position=0&uuid=ca36e39c-f635-41e2-bd5b-89a69185abab&query=%EB%B9%88%ED%8B%B0%EC%A7%80+%EC%9D%98%EB%A5%98+%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4",
 
-    thumbnail: "images/vintage-management.jpg",
+    thumbnail: "images/thmilherou-workshop.jpg",
     features: ["해외 거래 시 외국 통화로 표기된 가격을 원화로 환산하여 확인", "여러 상품을 구매하고 패키지로 묶어 관리 가능", "매입 가격과 판매 가격을 기록하여 이익 계산 및 재고 파악"],
     troubleshooting: {
       problem: "외화 데이터와 환산 금액을 각각 관리하면서 발생하는 데이터 구조의 복잡성과 유지보수의 어려움을 겪었습니다.",
@@ -116,7 +116,7 @@ export const projects = [
     // content: "Item 3 상세 내용",
     // source: "Image by Freepik",
     // sourceUrl: "https://kr.freepik.com/free-photo/man-looking-high-skyscrapers_4800868.htm",
-    thumbnail: "images/real-estate.jpg",
+    thumbnail: "images/beansandsausages-sunrise.jpg",
     features: ["실거래가 데이터를 기반으로 지도 UI에 매물 위치 마커 확인", "사용자가 선택한 건물 유형 및 지역에 따른 데이터 필터링"],
     troubleshooting: {
       problem: "지도 API 연동과 주소-좌표 변환(Geocoding) 로직이 한 곳에 얽혀 있어 코드 복잡도가 높아 기능 확장이 어려웠습니다.",
