@@ -36,9 +36,8 @@ export default function DashboardHero() {
           <Reordering />
           <p className="mb-6 text-xl sm:text-2xl">안녕하세요!</p>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="mb-6 text-xl text-center sm:text-4xl leading-relaxed font-bold break-keep">
-            사용자 경험과 컴포넌트 구조를
-            <br />
-            고민하는 퍼블리셔 / 개발자 김태연입니다.
+            사용자에게 필요한 경험을 생각하고 <br />
+            협업과 확장성을 위한 컴포넌트 구조를 고민합니다
           </motion.p>
           {/* <p className="mb-12 text-lg sm:text-xl break-keep">사용자가 필요한 서비스를 고민하고 실현해 나갑니다.</p> */}
           <div className="flex gap-4">
